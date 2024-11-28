@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<header>
+		<result delimiterParsingDisabled="true"
+			forceReloadCheck="true">
+			<expressionEngine
+				config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</result>
+	</header>
+	<override>
+		<xml fileName="config/application.xml" config-name="application">
+			<expressionEngine
+				config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</xml>
+
+		<xml fileName="config/LMK.xml" config-name="LMK">
+			<expressionEngine
+				config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</xml>
+
+		<xml fileName="config/routingCFG.xml" config-name="routing">
+			<expressionEngine
+				config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</xml>
+
+		<xml fileName="config/protocols.xml" config-name="protocol">
+			<expressionEngine
+				config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</xml>
+
+		<xml fileName="config/channel.xml" config-name="channel">
+			<expressionEngine
+				config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</xml>
+		<xml fileName="config/core-config.xml" config-name="core-config">
+			<expressionEngine
+				config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</xml>
+		<xml fileName="config/hsm-config.xml" config-name="hsm-config">
+			<expressionEngine
+					config-class="org.apache.commons.configuration.tree.xpath.XPathExpressionEngine" />
+		</xml>
+	</override>
+	<additional></additional>
+</configuration>

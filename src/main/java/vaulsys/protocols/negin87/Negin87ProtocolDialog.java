@@ -1,0 +1,189 @@
+package vaulsys.protocols.negin87;
+
+import vaulsys.protocols.base.ProtocolDialog;
+import vaulsys.protocols.base.ProtocolMessage;
+import vaulsys.protocols.ifx.imp.Ifx;
+import vaulsys.protocols.PaymentSchemes.ISO8583.base.ISOMsg;
+import vaulsys.protocols.PaymentSchemes.base.ISOTransactionCodes;
+
+import java.util.ArrayList;
+
+import org.apache.log4j.Logger;
+
+public class Negin87ProtocolDialog implements ProtocolDialog {
+
+    transient Logger logger = Logger.getLogger(Negin87ProtocolDialog.class);
+
+    @Override
+    public Ifx refine(Ifx ifx) {
+        return ifx;
+    }
+
+    @Override
+    public ProtocolMessage refine(ProtocolMessage protocolMessage) {
+
+        ISOMsg isoMsg = (ISOMsg) protocolMessage;
+
+        int[] msg200 = new int[]{2, 3, 4, 6, 7,/*10,*/11, 12, 13, 14, 15, 17,/*18,*/25, 32, 33, 35, 37, 41, 42, 43, 48, 49,/*51,*/52, 100, 102, 103/*,64*/};
+        int[] msg210 =    new int[]{2, 3, 4, 6, 7, 11, 12, 13, 15, 32, 33, 35, 37, 38, 39, 41, 43, 44, 48, 49, 51, 54, 100, 102, 103/*,64*/};
+        int[] msg210_48 = new int[]{2, 3, 4, 6, 7, 11, 12, 13, 15, 25, 32, 33, 35, 37, 38, 39, 41, 43, 44, 48, 49, 51, 54, 100, 102, 103/*,64*/};
+        int[] msg100 = new int[]{2, 3, 7,/*10,*/11, 12, 13, 15, 17,/*18,*/25, 32, 33, 37, 41, 42, 48, /*51,*/100/*,64*/};
+        int[] msg110 = new int[]{2, 3, 7, 11, 12, 13, 15, 32, 33, 37, 38, 39, 41, 44, 100, 102};
+        int[] msg400 = new int[]{2, 3, 4, 6, 7, 10, 11, 12, 13, 15, 17, 32, 33, 35, 37, 38, 39, 41, 42, 43, 48, 49, 51, 90, 95, 100,/*,128,*/ 102, 103};
+        int[] msg410 = new int[]{2, 3, 4, 6, 7, 11, 12, 13, 15, 32, 33, 37, 39, 42, 48, 51, 54/*,64*/, 100, 102, 103};
+        int[] msg800 = new int[]{7,11,15,32,33, 48, 53, 70, 96, 128};
+        int[] msg810 = new int[]{7,11,15,32,33, 39, 48, 70, 96, 128};
+        int[] msg = null;
+
+        try {
+            String mtiStr = isoMsg.getMTI();
+            Integer mti = Integer.parseInt(mtiStr);
+            switch (mti) {
+                case 200:
+                case 201:
+                    msg = msg200;
+                    break;
+                case 210:
+                case 211:
+                    msg = msg210;
+                    if (isoMsg.getString(3).substring(0, 2) == (ISOTransactionCodes.GET_STATEMENT)
+                    	|| isoMsg.getString(3).substring(0, 2) == (ISOTransactionCodes.DEPOSIT_CHECK_ACCOUNT)
+                    	|| isoMsg.getString(3).substring(0, 2) == (ISOTransactionCodes.CHANGE_PIN2))
+                    	msg = msg210_48;
+                    break;
+                case 400:
+                case 420:
+                    msg = msg400;
+                    break;
+                case 410:
+                case 430:
+                    msg = msg410;
+                    break;
+                case 100:
+                	msg = msg100;
+                	break;
+                case 110:
+                	msg = msg110;
+                	break;
+                case 800:
+                case 820:
+                	msg = msg800;
+                	break;
+                case 810:
+                case 830:
+                	msg = msg810;
+                default:
+                    break;
+            }
+
+            ArrayList<Integer> removedFields = new ArrayList<Integer>();
+            ArrayList<Integer> neededFields = new ArrayList<Integer>();
+
+            int k = 0; //
+            for (int i = 2; i < 64; i++) { //field counter
+                if (isoMsg.hasField(i) && (k >= msg.length || msg[k] != i)) {//msg has fld i but msg says no
+                    //logger.error("Message has field " + i + " but msg says no.");
+                    isoMsg.unset(i);//unset fld i
+                    removedFields.add(i);
+                }
+                if (!isoMsg.hasField(i) && (k < msg.length && msg[k] == i)) {
+                    //msg does not have fld i but msg says yes
+                    boolean result = setField(isoMsg, i);//set fld i
+                    neededFields.add(i);
+
+
+                }
+                if (!isoMsg.hasField(i) && (k >= msg.length || msg[k] != i)) {//msg does not have fld i and msg says no
+                } else {////msg has fld i and msg says yes
+                    k++;
+                }
+            }
+
+
+            checkField90100(isoMsg, msg, removedFields, neededFields, k);
+            
+            
+            if (neededFields.size() != 0)
+                logger.warn("Message doesn't have fields " + neededFields.toString() + " but it should have. Switch didn't add anything.");
+            if (removedFields.size() != 0)
+                logger.warn("Message does    have fields " + removedFields.toString() + " but it should not. Switch removed them.");
+
+            return protocolMessage;
+        } catch (Exception ex) {
+            if (true)
+                return null;
+        }
+
+        return null;
+
+    }
+
+	private void checkField90100(ISOMsg isoMsg, int[] msg, ArrayList<Integer> removedFields,
+			ArrayList<Integer> neededFields, int k) throws Exception {
+		for(int i =90; i<101; i+=1){
+			if (isoMsg.hasField(i) && (k >= msg.length || msg[k] != i)) {//msg has fld i but msg says no
+		        //logger.error("Message has field " + i + " but msg says no.");
+		        isoMsg.unset(i);//unset fld i
+		        removedFields.add(i);
+		    }
+		    if (!isoMsg.hasField(i) && (k < msg.length && msg[k] == i)) {
+		        //msg does not have fld i but msg says yes
+		        boolean result = setField(isoMsg, i);//set fld i
+		        neededFields.add(i);
+
+
+		    }
+		    if (!isoMsg.hasField(i) && (k >= msg.length || msg[k] != i)) {//msg does not have fld i and msg says no
+		    } else {////msg has fld i and msg says yes
+		        k++;
+		    }
+		}
+	}
+
+    private boolean setField(ISOMsg msg, int fldno) throws Exception {
+
+        return false;
+        /*
+          switch (fldno) {
+          case 10:
+              msg.set(fldno, "1");
+              return true;
+          case 49:
+          case 51:
+              msg.set(fldno, "364");
+              return true;
+          case 2:
+          case 3:
+          case 11:
+          case 41:
+              return false;
+              //throw new Exception("Fatal Error in refining ISOMsg.");
+          case 96:
+              msg.set(fldno, "00000000000000000000000000000000");
+              return true;
+          case 4:
+              msg.set(fldno, "2");
+              return true;
+          default:
+              msg.set(fldno, "0");
+              return false;
+          }
+          */
+    }
+
+    ////Raza Adding for Field traslation start
+    @Override
+    public ProtocolMessage TranslateToFanap(ProtocolMessage protocolMessage) throws Exception
+    {
+        //logger.info("Translating incoming message from Negin...");
+        return protocolMessage;
+    }
+
+    @Override
+    public ProtocolMessage TranslateFromFanap(ProtocolMessage protocolMessage) throws Exception
+    {
+        //logger.info("Translating outgoing message for Negin...");
+        return protocolMessage;
+    }
+    ////Raza Adding for Field traslation end
+}

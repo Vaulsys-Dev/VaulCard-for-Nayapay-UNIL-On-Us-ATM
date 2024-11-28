@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE isopackager SYSTEM "/config/protocol/generic-validating-packager.dtd">
+<!-- ISO 8583:1993 (BINARY) field descriptions for GenericValidatingPackager -->
+<isopackager>
+  <isofield
+      id="0"
+      length="4"
+      name="MESSAGE TYPE INDICATOR"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="1"
+      length="16"
+      name="BIT MAP"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_BITMAP"/>
+  <isofield
+      id="2"
+      length="19"
+      name="PAN - PRIMARY ACCOUNT NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLNUM">
+            <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_NUMNOZERO"
+          maxlen="19"/>
+  </isofield>
+  <isofield
+      id="3"
+      length="6"
+      name="PROCESSING CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC">
+            <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_NUM"
+          maxlen="6"/>
+      </isofield>
+  <isofield
+      id="4"
+      length="12"
+      name="AMOUNT, TRANSACTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="5"
+      length="12"
+      name="AMOUNT, SETTLEMENT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="6"
+      length="12"
+      name="AMOUNT, CARDHOLDER BILLING"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="7"
+      length="10"
+      name="TRANSMISSION DATE AND TIME"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="8"
+      length="8"
+      name="AMOUNT, CARDHOLDER BILLING FEE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="9"
+      length="8"
+      name="CONVERSION RATE, SETTLEMENT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="10"
+      length="8"
+      name="CONVERSION RATE, CARDHOLDER BILLING"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="11"
+      length="6"
+      name="SYSTEM TRACE AUDIT NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="12"
+      length="6"
+      name="TIME, LOCAL TRANSACTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="13"
+      length="4"
+      name="DATE, LOCAL TRANSACTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="14"
+      length="4"
+      name="DATE, EXPIRATION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="15"
+      length="4"
+      name="DATE, SETTLEMENT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="16"
+      length="4"
+      name="DATE, CONVERSION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="17"
+      length="4"
+      name="DATE, CAPTURE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="18"
+      length="4"
+      name="MERCHANTS TYPE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="19"
+      length="3"
+      name="ACQUIRING INSTITUTION COUNTRY CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="20"
+      length="3"
+      name="PAN EXTENDED COUNTRY CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="21"
+      length="3"
+      name="FORWARDING INSTITUTION COUNTRY CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="22"
+      length="3"
+      name="POINT OF SERVICE ENTRY MODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="23"
+      length="3"
+      name="CARD SEQUENCE NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="24"
+      length="3"
+      name="NETWORK INTERNATIONAL IDENTIFIEER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="25"
+      length="2"
+      name="POINT OF SERVICE CONDITION CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="26"
+      length="2"
+      name="POINT OF SERVICE PIN CAPTURE CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="27"
+      length="1"
+      name="AUTHORIZATION IDENTIFICATION RESP LEN"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="28"
+      length="9"
+      name="AMOUNT, TRANSACTION FEE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_AMOUNT"/>
+  <isofield
+      id="29"
+      length="9"
+      name="AMOUNT, SETTLEMENT FEE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_AMOUNT"/>
+  <isofield
+      id="30"
+      length="9"
+      name="AMOUNT, TRANSACTION PROCESSING FEE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_AMOUNT"/>
+  <isofield
+      id="31"
+      length="9"
+      name="AMOUNT, SETTLEMENT PROCESSING FEE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_AMOUNT"/>
+  <isofield
+      id="32"
+      length="11"
+      name="ACQUIRING INSTITUTION IDENT CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLNUM">
+          <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUMNOZERO_NOBLANK">
+          <property name="max-len" value="11"/>
+      </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="33"
+      length="11"
+      name="FORWARDING INSTITUTION IDENT CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLNUM">
+            <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUMNOZERO_NOBLANK">
+          <property name="max-len" value="11"/>
+      </isofieldvalidator>
+      </isofield>
+  <isofield
+      id="34"
+      length="28"
+      name="PAN EXTENDED"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLCHAR"/>
+  <isofield
+      id="35"
+      length="37"
+      name="TRACK 2 DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLCHAR"/> <!--Raza Changing from LLNUM as it is required by Intermediate Switch for CUP-->
+  <isofield
+      id="36"
+      length="104"
+      name="TRACK 3 DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="37"
+      length="12"
+      name="RETRIEVAL REFERENCE NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="38"
+      length="6"
+      name="AUTHORIZATION IDENTIFICATION RESPONSE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="39"
+      length="2"
+      name="RESPONSE CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="40"
+      length="3"
+      name="SERVICE RESTRICTION CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="41"
+      length="8"
+      name="CARD ACCEPTOR TERMINAL IDENTIFICACION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="42"
+      length="15"
+      name="CARD ACCEPTOR IDENTIFICATION CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/><!--
+  <isofield
+      id="43"
+      length="40"
+      name="CARD ACCEPTOR NAME/LOCATION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BINARY"/>
+  --><isofield
+      id="43"
+      length="40"
+      name="CARD ACCEPTOR NAME/LOCATION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/> <!--Raza changing from  IFB_BINARY as it is required by Intermediate Switch-->
+  <isofield
+      id="44"
+      length="50"
+      name="ADITIONAL RESPONSE DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLBINARY"/>
+  <isofield
+      id="45"
+      length="76"
+      name="TRACK 1 DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLCHAR"/>
+  <isofield
+      id="46"
+      length="999"
+      name="ADITIONAL DATA - ISO"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="47"
+      length="999"
+      name="ADITIONAL DATA - NATIONAL"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="48"
+      length="999"
+      name="ADITIONAL DATA - PRIVATE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLBINARY"/>
+  <isofield
+      id="49"
+      length="3"
+      name="CURRENCY CODE, TRANSACTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+            <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_NUM">
+          <property name="max-len" value="3"/>
+      </isofieldvalidator>
+      </isofield>
+  <isofield
+      id="50"
+      length="3"
+      name="CURRENCY CODE, SETTLEMENT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="51"
+      length="3"
+      name="CURRENCY CODE, CARDHOLDER BILLING"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="52"
+      length="8"
+      name="PIN DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_BINARY"/>
+  <isofield
+      id="53"
+      length="16"
+      name="SECURITY RELATED CONTROL INFORMATION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="54"
+      length="120"
+      name="ADDITIONAL AMOUNTS"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="55"
+      length="999"
+      name="RESERVED ISO"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="56"
+      length="999"
+      name="RESERVED ISO"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="57"
+      length="999"
+      name="RESERVED NATIONAL"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="58"
+      length="999"
+      name="RESERVED NATIONAL"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="59"
+      length="999"
+      name="RESERVED NATIONAL"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="60"
+      length="999"
+      name="RESERVED PRIVATE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="61"
+      length="999"
+      name="RESERVED PRIVATE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="62"
+      length="999"
+      name="RESERVED PRIVATE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="63"
+      length="999"
+      name="RESERVED PRIVATE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="64"
+      length="8"
+      name="MESSAGE AUTHENTICATION CODE FIELD"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_BINARY"/>
+  <isofield
+      id="65"
+      length="1"
+      name="BITMAP, EXTENDED"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_BINARY"/>
+  <isofield
+      id="66"
+      length="1"
+      name="SETTLEMENT CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="67"
+      length="2"
+      name="EXTENDED PAYMENT CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="68"
+      length="3"
+      name="RECEIVING INSTITUTION COUNTRY CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="69"
+      length="3"
+      name="SETTLEMENT INSTITUTION COUNTRY CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="70"
+      length="3"
+      name="NETWORK MANAGEMENT INFORMATION CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="71"
+      length="4"
+      name="MESSAGE NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="72"
+      length="4"
+      name="MESSAGE NUMBER LAST"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="73"
+      length="6"
+      name="DATE ACTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="74"
+      length="10"
+      name="CREDITS NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="75"
+      length="10"
+      name="CREDITS REVERSAL NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="76"
+      length="10"
+      name="DEBITS NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="77"
+      length="10"
+      name="DEBITS REVERSAL NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="78"
+      length="10"
+      name="TRANSFER NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="79"
+      length="10"
+      name="TRANSFER REVERSAL NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="80"
+      length="10"
+      name="INQUIRIES NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="81"
+      length="10"
+      name="AUTHORIZATION NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="82"
+      length="12"
+      name="CREDITS, PROCESSING FEE AMOUNT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="83"
+      length="12"
+      name="CREDITS, TRANSACTION FEE AMOUNT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="84"
+      length="12"
+      name="DEBITS, PROCESSING FEE AMOUNT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="85"
+      length="12"
+      name="DEBITS, TRANSACTION FEE AMOUNT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="86"
+      length="16"
+      name="CREDITS, AMOUNT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="87"
+      length="16"
+      name="CREDITS, REVERSAL AMOUNT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="88"
+      length="16"
+      name="DEBITS, AMOUNT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="89"
+      length="16"
+      name="DEBITS, REVERSAL AMOUNT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="90"
+      length="42"
+      name="ORIGINAL DATA ELEMENTS"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_NUMERIC"/>
+  <isofield
+      id="91"
+      length="1"
+      name="FILE UPDATE CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="92"
+      length="2"
+      name="FILE SECURITY CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="93"
+      length="6"
+      name="RESPONSE INDICATOR"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="94"
+      length="7"
+      name="SERVICE INDICATOR"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="95"
+      length="42"
+      name="REPLACEMENT AMOUNTS"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="96"
+      length="8"
+      name="MESSAGE SECURITY CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_BINARY"/>
+  <isofield
+      id="97"
+      length="17"
+      name="AMOUNT, NET SETTLEMENT"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_AMOUNT"/>
+  <isofield
+      id="98"
+      length="25"
+      name="PAYEE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="99"
+      length="11"
+      name="SETTLEMENT INSTITUTION IDENT CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLNUM"/>
+  <isofield
+      id="100"
+      length="11"
+      name="RECEIVING INSTITUTION IDENT CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLNUM"/>
+  <isofield
+      id="101"
+      length="17"
+      name="FILE NAME"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLCHAR"/>
+  <isofield
+      id="102"
+      length="28"
+      name="ACCOUNT IDENTIFICATION 1"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLCHAR"/>
+  <isofield
+      id="103"
+      length="28"
+      name="ACCOUNT IDENTIFICATION 2"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLCHAR"/>
+  <isofield
+      id="104"
+      length="100"
+      name="TRANSACTION DESCRIPTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="105"
+      length="999"
+      name="RESERVED ISO USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="106"
+      length="999"
+      name="RESERVED ISO USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="107"
+      length="999"
+      name="RESERVED ISO USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="108"
+      length="999"
+      name="RESERVED ISO USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="109"
+      length="999"
+      name="RESERVED ISO USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="110"
+      length="999"
+      name="RESERVED ISO USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="111"
+      length="999"
+      name="RESERVED ISO USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="112"
+      length="999"
+      name="RESERVED NATIONAL USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="113"
+      length="999"
+      name="RESERVED NATIONAL USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="114"
+      length="999"
+      name="RESERVED NATIONAL USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="115"
+      length="999"
+      name="RESERVED NATIONAL USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="116"
+      length="999"
+      name="RESERVED NATIONAL USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="117"
+      length="999"
+      name="RESERVED NATIONAL USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="118"
+      length="999"
+      name="RESERVED NATIONAL USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="119"
+      length="999"
+      name="RESERVED NATIONAL USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="120"
+      length="999"
+      name="RESERVED PRIVATE USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="121"
+      length="999"
+      name="RESERVED PRIVATE USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="122"
+      length="999"
+      name="RESERVED PRIVATE USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="123"
+      length="999"
+      name="RESERVED PRIVATE USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="124"
+      length="999"
+      name="RESERVED PRIVATE USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="125"
+      length="999"
+      name="RESERVED PRIVATE USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="126"
+      length="999"
+      name="RESERVED PRIVATE USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="127"
+      length="999"
+      name="RESERVED PRIVATE USE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_LLLCHAR"/>
+  <isofield
+      id="128"
+      length="8"
+      name="MAC 2"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFA_BINARY"/>
+
+<!-- 
+  <isovalidator class="garbage.vaulsys.protocols.PaymentSchemes.ISO8583.validator.PaymentSchemes.ISO8583BaseValidator.java">
+  	  <property name="mti" value="0200,0201" />
+  	  <property name="mandatory-field" value="0, 1, 2, 3, 11, 12, 13, 25, 32, 33, 37, 52" />
+  	  <property name="optional-field" value="4, 6, 7, 10, 14, 17, 35, 41, 42, 43, 48, 49, 51" />
+  	  <property name="conditional-field" value="" />
+  	  
+  	  <property name="range-field" value="ISO_3(000000;010000;310000;170000), 
+  	  										ISO_25(02;03;14;59;07)" />
+  	  <property name="check-field" value="( ISO_3 == '310000' )  => ((ISO_4 == '000000000000') || (not exist ISO_4))" />
+  	  <property name="extra-check" value="test1(first test,1 ), 
+  	  										test1(second test,2 ), 
+  	  										test1(third test ,3 ),
+  	  										test2(first test,1,1 ), 
+  	  										test2(second test,2, 2 ), 
+  	  										test2(third test ,3 ,3 )" />
+  </isovalidator>
+ -->
+
+<!-- 
+
+  <isovalidator class="vaulsys.protocols.PaymentSchemes.ISO8583.validator.Validator">
+  	<rule name="mandatory" mti="0200,0201" fields="2,3,4,11,12,22,24,26,32,43,49"/>
+  	<rule name ="if_then_mandatory" field1="2" statrtwith="59" field2="34"/>
+  	<rule name="mandatory" mti="0210" fields="3,4,39,11,12,32,49"/>
+  </isovalidator>
+
+  <isovalidator class="vaulsys.protocols.PaymentSchemes.ISO8583.validator.ISOV93Validator"/>
+ -->
+</isopackager>

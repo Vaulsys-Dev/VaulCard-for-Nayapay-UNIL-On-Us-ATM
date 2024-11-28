@@ -1,0 +1,387 @@
+<project name="fanap-switch" default="linux-rebuild" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="bin.dir" value="bin" />
+	<property name="dist.dir" value="dist" />
+	<property name="test.dir" value="test" />
+	<property name="lib.dir" value="lib" />
+	<property name="linux.build.dir" value="../fanap-switch" />
+	<property name="base.dir" value="vaulsys" />
+	<property name="conf.dir" value="config" />
+	<property name="run.dir" value="run" />
+	<property name="base.package" value="vaulsys" />
+	<property name="base.release" value="1.1.0" />
+	<property name="MainClass" value="vaulsys.application.VaulsysWCMS" />
+	<property name="financialentity.dir" value="${base.dir}/entity" />
+	<property name="financialentity.release" value="1.1.0" />
+	<property name="clearing.dir" value="${base.dir}/clearing" />
+	<property name="clearing.release" value="1.1.0" />
+	<property name="customer.dir" value="${base.dir}/customer" />
+	<property name="customer.release" value="1.1.0" />
+	<property name="fee.dir" value="${base.dir}/fee" />
+	<property name="fee.release" value="1.1.0" />
+	<property name="protocols.base.dir" value="${base.dir}/protocols" />
+	<property name="protocols.base.release" value="1.1.0" />
+	<property name="ifx.dir" value="${base.dir}/protocols/ifx" />
+	<property name="xmlifx.dir" value="${base.dir}/protocols/xmlifx" />
+	<property name="ifx.release" value="1.1.0" />
+	<property name="iso8583.base.dir" value="${base.dir}/protocols/iso8583" />
+	<property name="iso8583.base.release" value="1.1.0" />
+	<property name="iso8583v87.dir" value="${base.dir}/protocols/iso8583v87" />
+	<property name="iso8583v87.release" value="1.1.0" />
+	<property name="iso8583v93.dir" value="${base.dir}/protocols/iso8583v93" />
+	<property name="iso8583v93.release" value="1.1.0" />
+	<property name="iso8583posv87.dir" value="${base.dir}/protocols/pos87" />
+	<property name="iso8583posv87.release" value="1.1.0" />
+	<property name="infotech.dir" value="${base.dir}/protocols/infotech" />
+	<property name="infotech.release" value="1.1.0" />
+	<property name="negin87.dir" value="${base.dir}/protocols/negin87" />
+	<property name="negin87.release" value="1.1.0" />
+        <property name="apacs70.dir" value="${base.dir}/protocols/apacs70" />
+        <property name="apacs70.release" value="1.1.0" />
+ 	<property name="ndc.dir" value="${base.dir}/protocols/ndc" />
+	<property name="ndc.release" value="1.1.0" />
+	<property name="cms.dir" value="${base.dir}/protocols/cms" />
+	<property name="cms.release" value="1.1.0" />
+	<property name="epay.dir" value="${base.dir}/protocols/epay" />
+	<property name="epay.release" value="1.1.0" />
+	<property name="shetab87.dir" value="${base.dir}/protocols/shetab87" />
+	<property name="shetab87.release" value="1.1.0" />
+	<property name="ui-protocol.dir" value="${base.dir}/protocols/ui" />
+	<property name="ui-protocol.release" value="1.1.0" />
+	<property name="pep-switch.dir" value="${base.dir}/protocols/fnsPep" />
+	<property name="pep-switch.release" value="1.1.0" />
+	<property name="routing.dir" value="${base.dir}/routing" />
+	<property name="routing.release" value="1.1.0" />
+	<property name="scheduler.dir" value="${base.dir}/scheduler" />
+	<property name="scheduler.release" value="1.1.0" />
+	<property name="security.base.dir" value="${base.dir}/security" />
+	<property name="security.base.release" value="1.1.0" />
+	<property name="hsm.dir" value="${base.dir}/security/hsm" />
+	<property name="hsm.release" value="1.1.0" />
+	<property name="ssm.dir" value="${base.dir}/security/ssm" />
+	<property name="ssm.release" value="1.1.0" />
+	<property name="eft.base.dir" value="${base.dir}/eft" />
+	<property name="eft.base.release" value="1.1.0" />
+	<property name="authorization.base.dir" value="${base.dir}/authorization" />
+	<property name="authorization.base.release" value="1.1.0" />
+	<property name="authentication.base.dir" value="${base.dir}/authentication" />
+	<property name="authentication.base.release" value="1.1.0" />
+	<property name="atm.dir" value="${base.dir}/terminal/atm" />
+	<property name="atm.release" value="1.1.0" />
+	<property name="terminal.base.dir" value="${base.dir}/terminal" />
+	<property name="terminal.base.release" value="1.1.0" />
+	<property name="network.dir" value="${base.dir}/network" />
+	<property name="network.release" value="1.1.0" />
+	<property name="billpayment.dir" value="${base.dir}/billpayment" />
+	<property name="billpayment.release" value="1.1.0" />	
+	<property name="garbage.dir" value="garbage/"/>
+	
+	<property name="importer.dir" value="${base.dir}/config/importer" />
+	<property name="importer.release" value="1.1.0" />
+	<property name="importerMainCalss" value="vaulsys.config.importer.parser.import" />
+
+
+	<property name="initializer.dir" value="${base.dir}/initializer" />
+	<property name="initializer.release" value="1.1.0" />
+	<property name="initializerMainCalss" value="vaulsys.initializer.DBInitialize" />
+	<property name="othermains.dir" value="${base.dir}/othermains" />
+	<property name="uiuser.dir" value="${base.dir}/user" />
+	<property name="uimsg.dir" value="${base.dir}/msg" />
+	<property name="uiuser.release" value="1.1.0" />
+	<property name="irancell.dir" value="${base.dir}/mtn" />
+	<property name="irancell.release" value="1.1.0" />
+        <property name="lottery.dir" value="${base.dir}/lottery" />
+        <property name="lottery.release" value="1.1.0" />
+	
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+	</path>
+
+	<target name="info">
+		<echo message="java.vm.info=${java.vm.info}" />
+		<echo message="java.vm.name=${java.vm.name}" />
+		<echo message="java.vm.vendor=${java.vm.vendor}" />
+		<echo message="java.vm.version=${java.vm.version}" />
+		<echo message="os.arch=${os.arch}" />
+		<echo message="os.name=${os.name}" />
+		<echo message="os.version=${os.version}" />
+		<echo message="java.home=${java.home}" />
+		<echo message="java.class.path=${java.class.path}" />
+		<echo message="ant.java.version=${ant.java.version}" />
+		<echo message="file.encoding=${file.encoding}" />
+		<echo message="file.separator=${file.separator}" />
+		<echo message="user.home=${user.home}" />
+		<echo message="user.name=${user.name}" />
+		<echo message="user.language=${user.language}" />
+	</target>
+
+	<target name="init" description="Initialize build">
+		<tstamp />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="copy" depends="init">
+		<copy todir="${dist.dir}/lib">
+			<fileset dir="${lib.dir}" />
+		</copy>
+		<copy todir="${dist.dir}/config">
+			<fileset dir="${conf.dir}" />
+		</copy>
+<!--		<copy todir="${dist.dir}/config" file="${src.dir}/log4j.properties" />-->
+		<copy todir="${dist.dir}" file="${conf.dir}/c3p0.properties" />
+		<copy todir="${dist.dir}">
+			<fileset dir="${run.dir}" />
+		</copy>
+	</target>
+
+
+	<target name="clean" description="Cleaning source">
+		<delete file="${build.dir}/*" />
+		<delete dir="${build.dir}" />
+		<delete file="${dist.dir}/*" />
+		<delete dir="${dist.dir}" />
+		<delete file="${linux.build.dir}/*" />
+		<delete dir="${linux.build.dir}" />
+	</target>
+
+        <target name="class-clean" description="Cleaning source">
+                <delete file="${build.dir}/*" />
+                <delete dir="${build.dir}" />
+        </target>
+
+	<target name="compile" description="Compiling source" depends="init">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="classpath" failonerror="false" debug="true" encoding="UTF-8">
+			<exclude name="vaulsys/protocols/jware93/*.java"/>
+			<exclude name="vaulsys/initializer/ReadConfigData.java"/>
+			<exclude name="vaulsys/initializer/ATM*Config.java"/>
+			<exclude name="${garbage.dir}/**/*.java"/>
+		</javac>
+	</target>
+
+	<target name="recompile" description="Clean and compile source" depends="clean,compile" />
+
+	<target name="build" depends="compile, copy" description="create all jar files and copy config and lib files to dist folder">
+		<jar destfile="${dist.dir}/bill-payment-${billpayment.release}.jar" basedir="${build.dir}" includes="${billpayment.dir}/**" /> 
+		<jar destfile="${dist.dir}/financial-entity-management-${financialentity.release}.jar" basedir="${build.dir}" includes="${financialentity.dir}/**" />
+		<jar destfile="${dist.dir}/clearing-${clearing.release}.jar" basedir="${build.dir}" includes="${clearing.dir}/**" />
+		<jar destfile="${dist.dir}/customer-${customer.release}.jar" basedir="${build.dir}" includes="${customer.dir}/**" />
+		<jar destfile="${dist.dir}/fee-${fee.release}.jar" basedir="${build.dir}" includes="${fee.dir}/**" />
+		<jar destfile="${dist.dir}/protocol-ifx-${ifx.release}.jar" >
+                        <fileset dir="${build.dir}">
+                                <include name="${ifx.dir}/**" />
+                                <include name="${xmlifx.dir}/**" />
+                        </fileset>
+		</jar>
+		<jar destfile="${dist.dir}/protocol-iso8583-base-${iso8583.base.release}.jar" basedir="${build.dir}" includes="${iso8583.base.dir}/**" />
+		<jar destfile="${dist.dir}/iso8583v87-${iso8583v87.release}.jar" basedir="${build.dir}" includes="${iso8583v87.dir}/**" />
+		<jar destfile="${dist.dir}/iso8583v93-${iso8583v87.release}.jar" basedir="${build.dir}" includes="${iso8583v93.dir}/**" />
+		<jar destfile="${dist.dir}/iso8583v87-pos-${iso8583posv87.release}.jar" basedir="${build.dir}" includes="${iso8583posv87.dir}/**" />
+		<jar destfile="${dist.dir}/iso8583v87-negin-${negin87.release}.jar" basedir="${build.dir}" includes="${negin87.dir}/**" />
+		<jar destfile="${dist.dir}/fanap-cms-protocol-${cms.release}.jar" basedir="${build.dir}" includes="${cms.dir}/**" />
+                <jar destfile="${dist.dir}/apacs70-protocol-${apacs70.release}.jar" basedir="${build.dir}" includes="${apacs70.dir}/**" />
+		<jar destfile="${dist.dir}/fanap-epay-protocol-${epay.release}.jar" basedir="${build.dir}" includes="${epay.dir}/**" />
+		<jar destfile="${dist.dir}/shetab87-protocol-${shetab87.release}.jar" basedir="${build.dir}" includes="${shetab87.dir}/**" />
+		<jar destfile="${dist.dir}/pep-switch-protocol-${pep-switch.release}.jar" basedir="${build.dir}" includes="${pep-switch.dir}/**" />
+		<jar destfile="${dist.dir}/infotech-${infotech.release}.jar" basedir="${build.dir}" includes="${infotech.dir}/**" />
+		<jar destfile="${dist.dir}/ui-protocol-${ui-protocol.release}.jar" basedir="${build.dir}" includes="${ui-protocol.dir}/**" />
+		<jar destfile="${dist.dir}/routing-${routing.release}.jar" basedir="${build.dir}" includes="${routing.dir}/**" />
+		<jar destfile="${dist.dir}/scheduler-${scheduler.release}.jar" basedir="${build.dir}" includes="${scheduler.dir}/**" />
+		<jar destfile="${dist.dir}/hsm-eracom-${hsm.release}.jar" basedir="${build.dir}" includes="${hsm.dir}/**" />
+		<jar destfile="${dist.dir}/ssm-fanap-${ssm.release}.jar" basedir="${build.dir}" includes="${ssm.dir}/**" />
+		<jar destfile="${dist.dir}/eft-base-${eft.base.release}.jar" basedir="${build.dir}" includes="${eft.base.dir}/**" />
+		<jar destfile="${dist.dir}/authorization-base-${authorization.base.release}.jar" basedir="${build.dir}" includes="${authorization.base.dir}/**" />
+		<jar destfile="${dist.dir}/authentication-base-${authentication.base.release}.jar" basedir="${build.dir}" includes="${authentication.base.dir}/**" />		
+		<jar destfile="${dist.dir}/ndc-protocol-${ndc.release}.jar" basedir="${build.dir}" includes="${ndc.dir}/**" />
+		<jar destfile="${dist.dir}/atm-terminal-${atm.release}.jar" basedir="${build.dir}" includes="${atm.dir}/**" />
+		<jar destfile="${dist.dir}/network-${network.release}.jar" basedir="${build.dir}" includes="${network.dir}/**" />
+		<jar destfile="${dist.dir}/terminal-base-${terminal.base.release}.jar">
+			<fileset dir="${build.dir}">
+				<include name="${terminal.base.dir}/**" />
+				<include name="${terminal.base.dir}/impl/**" />
+			</fileset>
+		</jar>
+		<jar destfile="${dist.dir}/protocol-base-${protocols.base.release}.jar">
+			<fileset dir="${build.dir}">
+				<include name="${protocols.base.dir}/base/**" />
+				<include name="${protocols.base.dir}/exception/**" />
+				<include name="${protocols.base.dir}/handlers/**" />
+				<include name="${protocols.base.dir}/encoding/**" />
+			</fileset>
+		</jar>
+		<jar destfile="${dist.dir}/security-base-${security.base.release}.jar">
+			<fileset dir="${build.dir}">
+				<include name="${security.base.dir}/*" />
+				<include name="${security.base.dir}/base/**" />
+				<include name="${security.base.dir}/component/**" />
+				<include name="${security.base.dir}/exception/**" />
+				<include name="${security.base.dir}/jceadapter/**" />
+				<include name="${security.base.dir}/keyset/**" />
+				<include name="${security.base.dir}/keystore/**" />
+				<include name="${security.base.dir}/securekey/**" />
+			</fileset>
+		</jar>
+		<jar destfile="${dist.dir}/fanap-switch-base-${base.release}.jar">
+			<manifest>
+				<attribute name="Main-Class" value="${MainClass}" />
+			</manifest>
+			<fileset dir="${build.dir}">
+				<include name="${base.dir}/application/**" />
+				<include name="${base.dir}/deposit/**" />
+				<include name="${base.dir}/base/**" />
+				<include name="${base.dir}/calendar/**" />
+				<include name="${base.dir}/config/**" />
+				<include name="${base.dir}/contact/**" />
+				<include name="${base.dir}/exception/**" />
+				<include name="${base.dir}/job/**" />
+				<include name="${base.dir}/log/**" />
+				<include name="${base.dir}/message/**" />
+				<include name="${base.dir}/netmgmt/**" />
+				<include name="${base.dir}/persistence/**" />
+				<include name="${base.dir}/repeatreversal/**" />
+				<include name="${base.dir}/thirdparty/**" />
+				<include name="${base.dir}/transaction/**" />
+				<include name="${base.dir}/util/**" />
+				<include name="${base.dir}/wfe/**" />
+				<include name="${base.dir}/*.class" />
+				<include name="${base.dir}/protocols/*.class" />
+				<exclude name="${importer.dir}/**" />
+			</fileset>
+		</jar>
+		<jar destfile="${dist.dir}/initializer-${initializer.release}.jar" basedir="${build.dir}" includes="${initializer.dir}/**">
+			<manifest>
+				<attribute name="Main-Class" value="${initializerMainCalss}" />
+			</manifest>
+		</jar>
+		<jar destfile="${dist.dir}/othermains.jar" basedir="${build.dir}" includes="${othermains.dir}/**" />
+		<jar destfile="${dist.dir}/user-management-${uiuser.release}.jar">
+			<fileset dir="${build.dir}">
+				<include name="${uiuser.dir}/**"/>
+				<include name="${uimsg.dir}/**"/>
+			</fileset>
+		</jar>
+<!--		<jar destfile="${dist.dir}/user-management-${uiuser.release}.jar" basedir="${build.dir}" includes="${uiuser.dir}/**" />	-->
+		<jar destfile="${dist.dir}/irancell-${irancell.release}.jar" basedir="${build.dir}" includes="${irancell.dir}/**" />		
+                <jar destfile="${dist.dir}/lottery-${lottery.release}.jar" basedir="${build.dir}" includes="${lottery.dir}/**" />
+ 	</target>
+
+	<target name="build-single-jar" depends="compile, copy" description="create all jar files and copy config and lib files to dist folder">
+		<jar destfile="${dist.dir}/fanap-switch-whole-${base.release}.jar" basedir="${build.dir}" includes="${base.dir}/**">
+			<manifest>
+				<attribute name="Main-Class" value="${MainClass}" />
+			</manifest>
+		</jar>
+	</target>
+
+ 	<target name="rebuild" description="Clean everything and compile source" depends="clean, build" />
+
+	<target name="linux-build" description="Build target for linux" depends="class-clean, build">
+ 		<mkdir dir="${linux.build.dir}" />
+		<copy todir="${linux.build.dir}">
+			<fileset dir="${dist.dir}" />
+		</copy>
+		<chmod dir="${linux.build.dir}" perm="u+rwx" includes="*.sh" />
+	</target>
+
+	<target name="linux-rebuild" depends="clean, linux-build" />
+
+	<target name="othermains" description="Building other mains" depends="build">
+		<mkdir dir="${linux.build.dir}" />
+		<delete file="${linux.build.dir}/othermains.jar" />
+		<copy todir="${linux.build.dir}">
+			<fileset dir="${dist.dir}" />
+		</copy>
+		<chmod dir="${linux.build.dir}" perm="u+rwx" includes="*.sh" />		
+	</target>
+
+	<target name="run" description="Run the switch" depends="build">
+		<exec executable="cmd.exe" dir="${dist.dir}" os="Windows XP">
+			<arg line="/c run.bat" />
+		</exec>
+	</target>
+	
+	<target name="Switch-jar" depends="compile">
+	        <delete file="${basedir}/switch.jar" failonerror="false"/>
+	        <jar file="${basedir}/switch.jar">
+	            <fileset dir="${build.dir}" includes="**/*"/>
+	            <fileset dir="${src.dir}" includes="**/*.hbm.xml"/>
+	        </jar>
+	        <copy file="${basedir}/switch.jar" todir="D:\liveApps\FinalProjects\pasargad_switch_ui\lib" overwrite="true"/>
+	    </target>
+	
+	<!--
+	<target name="run" depends="build" description="run the switch...">
+		<java fork="true" classname="${base.package}.${MainClass}" dir="${dist.dir}">
+			<jvmarg value="-Dlog4j.configuration=C:\workspace\VaulsysWCMS\dist\config\log4j.properties"/>
+			<classpath>
+				<path location="${dist.dir}/fanap-nanoswitch-base-${base.release}.jar" />
+				<path location="${dist.dir}/merchant-management-${merchant.release}.jar" />
+				<path location="${dist.dir}/clearing-${clearing.release}.jar" />
+				<path location="${dist.dir}/customer-${customer.release}.jar" />
+				<path location="${dist.dir}/fee-${fee.release}.jar" />
+				<path location="${dist.dir}/institution-${institution.release}.jar" />
+				<path location="${dist.dir}/protocol-ifx-${ifx.release}.jar" />
+				<path location="${dist.dir}/protocol-iso8583-base-${iso8583.base.release}.jar" />
+				<path location="${dist.dir}/iso8583v87-${iso8583v87.release}.jar" />
+				<path location="${dist.dir}/iso8583v87-pos-${iso8583posv87.release}.jar" />
+				<path location="${dist.dir}/routing-${routing.release}.jar" />
+				<path location="${dist.dir}/scheduler-${scheduler.release}.jar" />
+				<path location="${dist.dir}/hsm-eracom-${hsm.release}.jar" />
+				<path location="${dist.dir}/ssm-fanap-${ssm.release}.jar" />
+				<path location="${dist.dir}/eft-base-${eft.base.release}.jar" />
+				<path location="${dist.dir}/protocol-base-${protocols.base.release}.jar" />
+				<path location="${dist.dir}/security-base-${security.base.release}.jar" />
+				<path refid="classpath" />
+			</classpath>
+		</java>
+	</target>
+	-->
+	<target name="mvn-install" description="installs the project into the local repository">
+	<artifact:pom id="mypom" file="pom.xml" />
+	  	<echo>The version is ${mypom.version}</echo>
+	  <artifact:install file="target/${mypom.artifactId}-${mypom.version}.jar">
+	    <pom refid="mypom"/>
+	  </artifact:install>
+	</target>
+	<target name="mvn-compile" description="compiles the project">
+		<artifact:mvn pom="pom.xml">
+		    <arg value="compile"/>
+		  </artifact:mvn>
+	</target>
+	<target name="mvn-package" description="packs the project">
+		<artifact:mvn pom="pom.xml">
+		    <arg value="package"/>
+		  </artifact:mvn>
+	</target>
+	<target name="mvn-resolve-dependency" description="resolves dependencies">
+		<artifact:mvn pom="pom.xml">
+		    <arg value="dependency:resolve"/>
+		  </artifact:mvn>
+	</target>
+	<target name="mvn-dependency-tree" description="shows dependency tree">
+		<artifact:mvn pom="pom.xml">
+		    <arg value="dependency:tree"/>
+		  </artifact:mvn>
+	</target>
+	<target name="mvn-clean" description="cleans the project">
+		<artifact:mvn pom="pom.xml">
+		    <arg value="clean"/>
+		  </artifact:mvn>
+	</target>
+	<target name="mvn-clean-compile"  description="cleans and compiles the project" >
+		<artifact:mvn pom="pom.xml">
+		<!-- <jvmarg value="-Djava.fork=true"/>
+		<jvmarg value="-Djava.endorsed.dirs=li4b"/>
+		-->
+		    <arg value="clean"/>
+		    <arg value="compile"/>
+		  </artifact:mvn>
+	</target>
+	<target name="mvn-axis2-wsdl2code" description="generates java from wsdl using axis2">
+		<artifact:mvn pom="pom.xml">
+		    <arg value="axis2-wsdl2code:wsdl2code"/>
+		  </artifact:mvn>
+	</target>
+</project>
+

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE isopackager SYSTEM "/config/protocol/generic-validating-packager.dtd">
+<!-- ISO 8583:1993 (BINARY) field descriptions for GenericValidatingPackager -->
+<isopackager>
+  <isofield
+      id="0"
+      length="4"
+      name="MESSAGE TYPE INDICATOR"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="1"
+      length="16"
+      name="BIT MAP"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BITMAP"/>
+  <isofield
+      id="2"
+      length="20"
+      name="PAN - PRIMARY ACCOUNT NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM">
+      <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_NUMNOZERO"
+          maxlen="19"/>
+  </isofield>
+  <isofield
+      id="3"
+      length="6"
+      name="PROCESSING CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC">
+            <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_NUM"
+          maxlen="6"/>
+      </isofield>
+  <isofield
+      id="4"
+      length="12"
+      name="AMOUNT, TRANSACTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+    <isofield
+            id="6"
+            length="12"
+            name="AMOUNT, CARDHOLDER BILLING"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/> <!--Raza Adding Field for Keenu-->
+    <isofield
+            id="8"
+            length="8"
+            name="AMOUNT, CARDHOLDER BILLING FEE"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/> <!--Raza Adding Field for Keenu-->
+    <isofield
+            id="9"
+            length="8"
+            name="CONVERSION RATE, SETTLEMENT"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/> <!--Raza Adding Field for Keenu-->
+  <isofield
+      id="11"
+      length="6"
+      name="SYSTEM TRACE AUDIT NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="12"
+      length="6"
+      name="TIME, LOCAL TRANSACTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="13"
+      length="4"
+      name="DATE, LOCAL TRANSACTION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="14"
+      length="4"
+      name="DATE, EXPIRATION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+    <isofield
+            id="21"
+            length="4"
+            name="FORWARDING INSTITUTION COUNTRY CODE"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/> <!--Raza adding for Keenu-->
+  <isofield
+      id="22"
+      length="4"
+      name="POINT OF SERVICE ENTRY MODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/> <!--Raza-->
+    <isofield
+            id="23"
+            length="4"
+            name="CARD SEQUENCE NUMBER"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/> <!--Raza adding for KEENU-->
+    <isofield
+        id="24"
+        length="4"
+        name="NETWORK INTERNATIONAL IDENTIFIEER"
+        class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/> <!--Raza for KEENU-->
+    <isofield
+            id="25"
+            length="2"
+            name="POINT OF SERVICE CONDITION CODE"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/> <!--Raza for KEENU-->
+    <isofield
+            id="30"
+            length="10"
+            name="AMOUNT, TRANSACTION PROCESSING FEE"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_AMOUNT"/> <!--Raza adding for KEENU-->
+  <isofield
+      id="35"
+      length="38"
+      name="TRACK 2 DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM"/> <!--Raza adding for KEENU-->
+  <isofield
+      id="37"
+      length="12"
+      name="RETRIEVAL REFERENCE NUMBER"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+      <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUM">
+      <property name="max-len" value="12"/>
+      </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="38"
+      length="6"
+      name="AUTHORIZATION IDENTIFICATION RESPONSE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+    <isofieldvalidator
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUM">
+      <property name="max-len" value="6"/>
+    </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="39"
+      length="2"
+      name="RESPONSE CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+    <isofieldvalidator
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUM">
+      <property name="max-len" value="2"/>
+    </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="41"
+      length="8"
+      name="CARD ACCEPTOR TERMINAL IDENTIFICACION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+    <isofieldvalidator
+            class="vaulsys.protocols.paymentscheme.base.IVA_ALPHANUMSPEC">
+        <property name="max-len" value="8"/>
+    </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="42"
+      length="15"
+      name="CARD ACCEPTOR IDENTIFICATION CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+    <isofieldvalidator
+            class="vaulsys.protocols.paymentscheme.base.IVA_ALPHANUMSPEC">
+        <property name="max-len" value="15"/>
+    </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="43"
+      length="40"
+      name="CARD ACCEPTOR NAME/LOCATION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+      <isofieldvalidator
+              class="vaulsys.protocols.paymentscheme.base.IVA_ALPHANUMSPEC">
+          <property name="max-len" value="40"/>
+      </isofieldvalidator>
+  </isofield>
+    <isofield
+            id="44"
+            length="27"
+            name="ADITIONAL RESPONSE DATA"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/> <!--Raza adding for KEENU-->
+  <isofield
+      id="45"
+      length="76"
+      name="TRACK 1 DATA"
+      class="vaulsys.protocols.PaymentSchemes.base.IFB_LHCHAR"/>
+  <isofield
+      id="48"
+      length="999"
+      name="ADITIONAL DATA - PRIVATE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLHCHAR">
+      <isofieldvalidator
+              class="vaulsys.protocols.PaymentSchemes.base.IVA_ALPHANUMSPEC">
+          <property name="max-len" value="999"/>
+      </isofieldvalidator>
+  </isofield>
+    <isofield
+            id="51"
+            length="4"
+            name="CURRENCY CODE, CARDHOLDER BILLING"
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/> <!--Raza Adding for Keenu-->
+  <isofield
+      id="52"
+      length="8"
+      name="PIN DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BINARY"/>
+  <isofield
+      id="53"
+      length="16"
+      name="SECURITY RELATED CONTROL INFORMATION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="54"
+      length="120"
+      name="ADDITIONAL AMOUNTS"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR">
+      <isofieldvalidator
+            class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUM">
+        <property name="max-len" value="120"/>
+      </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="55"
+      length="255"
+      name="IC CARD DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLBINARY"/>  <!--Raza adding for KEENU-->
+  <isofield
+      id="60"
+      length="999"
+      name="SELF-DEFINED DATA"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"> <!--Raza adding for KEENU-->
+    <!--<isofieldvalidator
+            class="vaulsys.protocols.paymentscheme.base.IVA_ALPHANUMSPEC">
+        <property name="max-len" value="999"/>
+    </isofieldvalidator>-->
+  </isofield>
+  <isofield
+      id="61"
+      length="999"
+      name="POS INFORMATION"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR">
+    <isofieldvalidator class="vaulsys.protocols.PaymentSchemes.base.IVA_ALPHANUMSPEC">
+        <property name="max-len" value="999"/>
+    </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="62"
+      length="999"
+      name="CUSTOM PAYMENT SERVICE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"> <!--Raza adding for KEENU-->
+    <!--<isofieldvalidator class="vaulsys.protocols.PaymentSchemes.base.IVA_ALPHANUMSPEC">
+        <property name="max-len" value="999"/>
+    </isofieldvalidator>-->
+  </isofield>
+  <isofield
+      id="63"
+      length="999"
+      name="TRANSACTION CODE"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR">
+    <!--<isofieldvalidator class="vaulsys.protocols.PaymentSchemes.base.IVA_ALPHANUMSPEC">
+        <property name="max-len" value="999"/>
+    </isofieldvalidator>-->
+  </isofield>
+  <isofield
+       id="64"
+       length="8"
+       name="MESSAGE AUTHENTICATION CODE FIELD"
+       class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BINARY"/>
+</isopackager>

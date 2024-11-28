@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE isopackager SYSTEM "/config/protocol/generic-validating-packager.dtd">
+
+<!-- ISO 8583:1993 (BINARY) field descriptions for GenericValidatingPackager -->
+
+<isopackager>
+  <isofield
+      id="0"
+      length="4"
+      name="Message Type Indicator"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="1"
+      length="16"
+      name="Bitmap"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BITMAP"/>
+  <isofield
+      id="2"
+      length="19"
+      name="Primary Account number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM">
+      <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_NUMNOZERO"
+          maxlen="19"/>
+  </isofield>
+  <isofield
+      id="3"
+      length="6"
+      name="Processing Code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC">
+      <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_NUM"
+          maxlen="6"/>
+  </isofield>
+  <isofield
+      id="4"
+      length="12"
+      name="Amount, Transaction"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC">
+  </isofield>
+  <isofield
+      id="5"
+      length="12"
+      name="Amount, Reconciliation"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="6"
+      length="12"
+      name="Amount, Cardholder billing"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="7"
+      length="10"
+      name="Date and time, transmission"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="8"
+      length="8"
+      name="Amount, Cardholder billing fee"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="9"
+      length="8"
+      name="Conversion rate, Reconciliation"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="10"
+      length="8"
+      name="Conversion rate, Cardholder billing"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="11"
+      length="6"
+      name="Systems trace audit number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="12"
+      length="12"
+      name="Date and time, Local transaction"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="13"
+      length="4"
+      name="Date, Effective"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="14"
+      length="4"
+      name="Date, Expiration"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="15"
+      length="6"
+      name="Date, Settlement"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="16"
+      length="4"
+      name="Date, Conversion"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="17"
+      length="4"
+      name="Date, Capture"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="18"
+      length="4"
+      name="Merchant type"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="19"
+      length="3"
+      name="Country code, Acquiring institution"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="20"
+      length="3"
+      name="Country code, Primary account number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="21"
+      length="3"
+      name="Country code, Forwarding institution"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="22"
+      length="12"
+      name="Point of service data code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+      <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUMNOBLANK"
+          maxlen="12"/>
+  </isofield>
+  <isofield
+      id="23"
+      length="3"
+      name="Card sequence number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="24"
+      length="3"
+      name="Function code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="25"
+      length="4"
+      name="Message reason code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="26"
+      length="4"
+      name="Card acceptor business code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="27"
+      length="1"
+      name="Approval code length"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="28"
+      length="6"
+      name="Date, Reconciliation"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="29"
+      length="3"
+      name="Reconciliation indicator"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="30"
+      length="24"
+      name="Amounts, original"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="31"
+      length="99"
+      name="Acquirer reference data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="32"
+      length="11"
+      name="Acquirer institution identification code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM">
+      <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUMNOZERO_NOBLANK">
+          <property name="max-len" value="11"/>
+      </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="33"
+      length="11"
+      name="Forwarding institution identification code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM">
+      <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_ALPHANUMNOZERO_NOBLANK">
+          <property name="max-len" value="11"/>
+      </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="34"
+      length="28"
+      name="Primary account number, extended"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="35"
+      length="37"
+      name="Track 2 data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="36"
+      length="104"
+      name="Track 3 data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="37"
+      length="12"
+      name="Retrieval reference number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="38"
+      length="6"
+      name="Approval code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="39"
+      length="3"
+      name="Action code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="40"
+      length="3"
+      name="Service code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="41"
+      length="8"
+      name="Card acceptor terminal identification"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="42"
+      length="15"
+      name="Card acceptor identification code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="43"
+      length="99"
+      name="Card acceptor name/location"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="44"
+      length="99"
+      name="Additional response data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="45"
+      length="76"
+      name="Track 1 data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="46"
+      length="204"
+      name="Amounts, Fees"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="47"
+      length="999"
+      name="Additional data - national"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="48"
+      length="999"
+      name="Additional data - private"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLBINARY">
+  </isofield>
+  <isofield
+      id="49"
+      length="3"
+      name="Currency code, Transaction"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR">
+      <isofieldvalidator
+          class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IVA_NUM">
+          <property name="max-len" value="3"/>
+      </isofieldvalidator>
+  </isofield>
+  <isofield
+      id="50"
+      length="3"
+      name="Currency code, Reconciliation"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="51"
+      length="3"
+      name="Currency code, Cardholder billing"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="52"
+      length="8"
+      name="Personal identification number [PIN] data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BINARY"/>
+  <isofield
+      id="53"
+      length="48"
+      name="Security related control information"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLBINARY"/>
+  <isofield
+      id="54"
+      length="120"
+      name="Amounts, additional"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="55"
+      length="255"
+      name="IC card system related data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLBINARY"/>
+  <isofield
+      id="56"
+      length="35"
+      name="Original data elements"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM"/>
+  <isofield
+      id="57"
+      length="3"
+      name="Authorization life cycle code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="58"
+      length="11"
+      name="Authorizing agent institution Id Code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM"/>
+  <isofield
+      id="59"
+      length="999"
+      name="Transport data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="60"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="61"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="62"
+      length="999"
+      name="Reserved for private use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="63"
+      length="999"
+      name="Reserved for private use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="64"
+      length="8"
+      name="Message authentication code field"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BINARY"/>
+  <isofield
+      id="65"
+      length="8"
+      name="Reserved for ISO use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BINARY"/>
+  <isofield
+      id="66"
+      length="204"
+      name="Amounts, original fees"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="67"
+      length="2"
+      name="Extended payment data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="68"
+      length="3"
+      name="Country code, receiving institution"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="69"
+      length="3"
+      name="Country code, settlement institution"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="70"
+      length="3"
+      name="Country code, authorizing agent Inst."
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="71"
+      length="8"
+      name="Message number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="72"
+      length="999"
+      name="Data record"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="73"
+      length="6"
+      name="Date, action"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="74"
+      length="10"
+      name="Credits, number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="75"
+      length="10"
+      name="Credits, reversal number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="76"
+      length="10"
+      name="Debits, number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="77"
+      length="10"
+      name="Debits, reversal number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="78"
+      length="10"
+      name="Transfer, number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="79"
+      length="10"
+      name="Transfer, reversal number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="80"
+      length="10"
+      name="Inquiries, number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="81"
+      length="10"
+      name="Authorizations, number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="82"
+      length="10"
+      name="Inquiries, reversal number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="83"
+      length="10"
+      name="Payments, number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="84"
+      length="10"
+      name="Payments, reversal number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="85"
+      length="10"
+      name="Fee collections, number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="86"
+      length="16"
+      name="Credits, amount"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="87"
+      length="16"
+      name="Credits, reversal amount"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="88"
+      length="16"
+      name="Debits, amount"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="89"
+      length="16"
+      name="Debits, reversal amount"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="90"
+      length="10"
+      name="Authorizations, reversal number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="91"
+      length="3"
+      name="Country code, transaction Dest. Inst."
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="92"
+      length="3"
+      name="Country code, transaction Orig. Inst."
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="93"
+      length="11"
+      name="Transaction Dest. Inst. Id code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM"/>
+  <isofield
+      id="94"
+      length="11"
+      name="Transaction Orig. Inst. Id code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM"/>
+  <isofield
+      id="95"
+      length="99"
+      name="Card issuer reference data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="96"
+      length="999"
+      name="Key management data"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLBINARY"/>
+  <isofield
+      id="97"
+      length="17"
+      name="Amount, Net reconciliation"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_AMOUNT"/>
+  <isofield
+      id="98"
+      length="25"
+      name="Payee"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IF_CHAR"/>
+  <isofield
+      id="99"
+      length="11"
+      name="Settlement institution Id code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="100"
+      length="11"
+      name="Receiving institution Id code"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLNUM"/>
+  <isofield
+      id="101"
+      length="17"
+      name="File name"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="102"
+      length="28"
+      name="Account identification 1"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="103"
+      length="28"
+      name="Account identification 2"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="104"
+      length="100"
+      name="Transaction description"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="105"
+      length="16"
+      name="Credits, Chargeback amount"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="106"
+      length="16"
+      name="Debits, Chargeback amount"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="107"
+      length="10"
+      name="Credits, Chargeback number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="108"
+      length="10"
+      name="Debits, Chargeback number"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_NUMERIC"/>
+  <isofield
+      id="109"
+      length="84"
+      name="Credits, Fee amounts"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="110"
+      length="84"
+      name="Debits, Fee amounts"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLCHAR"/>
+  <isofield
+      id="111"
+      length="999"
+      name="Reserved for ISO use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="112"
+      length="999"
+      name="Reserved for ISO use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="113"
+      length="999"
+      name="Reserved for ISO use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="114"
+      length="999"
+      name="Reserved for ISO use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="115"
+      length="999"
+      name="Reserved for ISO use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="116"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="117"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="118"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="119"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="120"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="121"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="122"
+      length="999"
+      name="Reserved for national use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="123"
+      length="999"
+      name="Reserved for private use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="124"
+      length="999"
+      name="Reserved for private use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="125"
+      length="999"
+      name="Reserved for private use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="126"
+      length="999"
+      name="Reserved for private use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="127"
+      length="999"
+      name="Reserved for private use"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_LLLCHAR"/>
+  <isofield
+      id="128"
+      length="8"
+      name="Message authentication code field"
+      class="vaulsys.protocols.PaymentSchemes.ISO8583.base.IFB_BINARY"/>
+<!-- 
+  <isovalidator class="vaulsys.protocols.PaymentSchemes.ISO8583.validator.Validator">
+  	<rule name="mandatory" mti="1200,1201" fields="2,3,4,11,12,22,24,26,32,43,49"/>
+  	<rule name ="if_then_mandatory" field1="2" statrtwith="59" field2="34"/>
+  	<rule name="mandatory" mti="1210" fields="3,4,39,11,12,32,49"/>
+  </isovalidator>
+
+
+  <isovalidator class="vaulsys.protocols.PaymentSchemes.ISO8583.validator.ISOV93Validator"/>
+ -->
+</isopackager>

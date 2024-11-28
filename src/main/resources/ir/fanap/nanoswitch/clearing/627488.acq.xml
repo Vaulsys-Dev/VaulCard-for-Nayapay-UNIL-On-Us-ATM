@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<List_acq>
+    <Row>000001
+        <TransactionType>W</TransactionType>
+        <Date>1384/11/23</Date>
+        <Time>08:55:51</Time>
+        <RefrenceId>007994</RefrenceId>
+        <PAN>1700191111648059</PAN>
+        <IssuerId>603799</IssuerId>
+        <TerminalId>00071101</TerminalId>
+        <Amount>000000200000</Amount>
+    </Row>
+    <Row>000001
+        <TransactionType>W</TransactionType>
+        <Date>1384/11/23</Date>
+        <Time>08:55:51</Time>
+        <RefrenceId>007994</RefrenceId>
+        <PAN>1700191111648059</PAN>
+        <IssuerId>603799</IssuerId>
+        <TerminalId>00071101</TerminalId>
+        <Amount>000000200000</Amount>
+    </Row>
+</List_acq>

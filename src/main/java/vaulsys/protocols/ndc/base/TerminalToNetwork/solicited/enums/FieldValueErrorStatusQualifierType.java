@@ -1,0 +1,227 @@
+package vaulsys.protocols.ndc.base.TerminalToNetwork.solicited.enums;
+
+import vaulsys.protocols.ndc.base.config.StatusQualifierType;
+
+public class FieldValueErrorStatusQualifierType extends StatusQualifierType {
+
+	private static final String ILLEGAL_MESSAGE_CLASS_VALUE = "01";
+	private static final String ILLEGAL_MESSAGE_SUB_CLASS_VALUE = "02";
+	private static final String ILLEGAL_LOAD_KEY_MESSAGE_IDENTIFIER_VALUE = "03";
+	private static final String ILLEGAL_TERMINAL_COMMAND_CODE_VALUE = "04";
+	private static final String ILLEGAL_TERMINAL_COMMAND_MODIFIER_VALUE = "05";
+	private static final String ILLEGAL_FUNCTION_ID_IN_TRANSACTION_REPLY_COMMAND_VALUE = "06";
+	private static final String DATA_FIELD_CONTAINS_A_NON_NUMERIC_DIGIT_VALUE = "07";
+	private static final String NUMERIC_VALUE_OUT_OF_RANGE_VALUE = "08";
+	private static final String INVALID_MESSAGE_CO_ORDINATION_NUMBER_VALUE = "09";
+	private static final String ILLEGAL_FIT_NUMBER_VALUE = "10";
+	private static final String TOO_MANY_NOTES_IN_TRANSACTION_REPLY_COMMAND_VALUE = "11";
+	private static final String UNRECOGNIZED_DOCUMENT_DESTINATION_VALUE = "13";
+	private static final String TOO_MANY_COINS_IN_TRANSACTION_REPLY_COMMAND_VALUE = "14";
+	private static final String UNRECOGNIZED_BUFFER_IDENTIFIER_VALUE = "15";
+	private static final String BUFFER_IDETIFIER_E_MISSING_VALUE = "16";
+	private static final String DOCUMENT_NAME_ERROR_VALUE = "17";
+	private static final String THE_SCREEN_IDENTIFIER_IN_AN_OVERRIDE_RESERVED_SCREEN_VALUE = "18";
+	private static final String INCORRECT_KEY_SIZE_SENT_IN_AN_ENCRYPTION_KEY_CHANGE_MESSAGE_VALUE = "22";
+	private static final String THE_VERIFICATION_OF_AN_RSA_SIGNATURE_FAILED_VALUE = "23";
+	private static final String THE_PKCS_PACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE = "24";
+	private static final String THE_PKCS_UNPACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE = "25";
+	private static final String THE_PKCS_PAD_BLOCK_TYPE_IN_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE = "26";
+	private static final String THE_DECRYPTION_OF_THE_FIXED_HEADER_FAILED_VALUE = "27";
+	private static final String THE_NULL_BYTE_FOLLOWING_PADDING_IS_MISSING_VALUE = "28";
+	private static final String THE_PAD_BYTE_COUNT_IS_INVALID_VALUE = "29";
+	
+	
+	
+	
+	public static final FieldValueErrorStatusQualifierType ILLEGAL_MESSAGE_CLASS = new FieldValueErrorStatusQualifierType(ILLEGAL_MESSAGE_CLASS_VALUE);
+	public static final FieldValueErrorStatusQualifierType ILLEGAL_MESSAGE_SUB_CLASS = new FieldValueErrorStatusQualifierType(ILLEGAL_MESSAGE_SUB_CLASS_VALUE);
+	public static final FieldValueErrorStatusQualifierType ILLEGAL_LOAD_KEY_MESSAGE_IDENTIFIER = new FieldValueErrorStatusQualifierType(ILLEGAL_LOAD_KEY_MESSAGE_IDENTIFIER_VALUE);
+	public static final FieldValueErrorStatusQualifierType ILLEGAL_TERMINAL_COMMAND_CODE = new FieldValueErrorStatusQualifierType(ILLEGAL_TERMINAL_COMMAND_CODE_VALUE);
+	public static final FieldValueErrorStatusQualifierType ILLEGAL_TERMINAL_COMMAND_MODIFIER = new FieldValueErrorStatusQualifierType(ILLEGAL_TERMINAL_COMMAND_MODIFIER_VALUE);
+	public static final FieldValueErrorStatusQualifierType ILLEGAL_FUNCTION_ID_IN_TRANSACTION_REPLY_COMMAND = new FieldValueErrorStatusQualifierType(ILLEGAL_FUNCTION_ID_IN_TRANSACTION_REPLY_COMMAND_VALUE);
+	public static final FieldValueErrorStatusQualifierType DATA_FIELD_CONTAINS_A_NON_NUMERIC_DIGIT = new FieldValueErrorStatusQualifierType(DATA_FIELD_CONTAINS_A_NON_NUMERIC_DIGIT_VALUE);
+	public static final FieldValueErrorStatusQualifierType NUMERIC_VALUE_OUT_OF_RANGE = new FieldValueErrorStatusQualifierType(NUMERIC_VALUE_OUT_OF_RANGE_VALUE);
+	public static final FieldValueErrorStatusQualifierType INVALID_MESSAGE_CO_ORDINATION_NUMBER = new FieldValueErrorStatusQualifierType(INVALID_MESSAGE_CO_ORDINATION_NUMBER_VALUE);
+	public static final FieldValueErrorStatusQualifierType ILLEGAL_FIT_NUMBER = new FieldValueErrorStatusQualifierType(ILLEGAL_FIT_NUMBER_VALUE);
+	public static final FieldValueErrorStatusQualifierType TOO_MANY_NOTES_IN_TRANSACTION_REPLY_COMMAND = new FieldValueErrorStatusQualifierType(TOO_MANY_NOTES_IN_TRANSACTION_REPLY_COMMAND_VALUE);
+	public static final FieldValueErrorStatusQualifierType UNRECOGNIZED_DOCUMENT_DESTINATION = new FieldValueErrorStatusQualifierType(UNRECOGNIZED_DOCUMENT_DESTINATION_VALUE);
+	public static final FieldValueErrorStatusQualifierType TOO_MANY_COINS_IN_TRANSACTION_REPLY_COMMAND = new FieldValueErrorStatusQualifierType(TOO_MANY_COINS_IN_TRANSACTION_REPLY_COMMAND_VALUE);
+	public static final FieldValueErrorStatusQualifierType UNRECOGNIZED_BUFFER_IDENTIFIER = new FieldValueErrorStatusQualifierType(UNRECOGNIZED_BUFFER_IDENTIFIER_VALUE);
+	public static final FieldValueErrorStatusQualifierType BUFFER_IDETIFIER_E_MISSING = new FieldValueErrorStatusQualifierType(BUFFER_IDETIFIER_E_MISSING_VALUE);
+	public static final FieldValueErrorStatusQualifierType DOCUMENT_NAME_ERROR = new FieldValueErrorStatusQualifierType(DOCUMENT_NAME_ERROR_VALUE);
+	public static final FieldValueErrorStatusQualifierType THE_SCREEN_IDENTIFIER_IN_AN_OVERRIDE_RESERVED_SCREEN = new FieldValueErrorStatusQualifierType(THE_SCREEN_IDENTIFIER_IN_AN_OVERRIDE_RESERVED_SCREEN_VALUE);
+	public static final FieldValueErrorStatusQualifierType INCORRECT_KEY_SIZE_SENT_IN_AN_ENCRYPTION_KEY_CHANGE_MESSAGE = new FieldValueErrorStatusQualifierType(INCORRECT_KEY_SIZE_SENT_IN_AN_ENCRYPTION_KEY_CHANGE_MESSAGE_VALUE);
+	public static final FieldValueErrorStatusQualifierType THE_VERIFICATION_OF_AN_RSA_SIGNATURE_FAILED = new FieldValueErrorStatusQualifierType(THE_VERIFICATION_OF_AN_RSA_SIGNATURE_FAILED_VALUE);
+	public static final FieldValueErrorStatusQualifierType THE_PKCS_PACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED = new FieldValueErrorStatusQualifierType(THE_PKCS_PACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE);
+	public static final FieldValueErrorStatusQualifierType THE_PKCS_UNPACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED = new FieldValueErrorStatusQualifierType(THE_PKCS_UNPACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE);
+	public static final FieldValueErrorStatusQualifierType THE_PKCS_PAD_BLOCK_TYPE_IN_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED = new FieldValueErrorStatusQualifierType(THE_PKCS_PAD_BLOCK_TYPE_IN_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE);
+	public static final FieldValueErrorStatusQualifierType THE_DECRYPTION_OF_THE_FIXED_HEADER_FAILED = new FieldValueErrorStatusQualifierType(THE_DECRYPTION_OF_THE_FIXED_HEADER_FAILED_VALUE);
+	public static final FieldValueErrorStatusQualifierType THE_NULL_BYTE_FOLLOWING_PADDING_IS_MISSING = new FieldValueErrorStatusQualifierType(THE_NULL_BYTE_FOLLOWING_PADDING_IS_MISSING_VALUE);
+	public static final FieldValueErrorStatusQualifierType THE_PAD_BYTE_COUNT_IS_INVALID = new FieldValueErrorStatusQualifierType(THE_PAD_BYTE_COUNT_IS_INVALID_VALUE);
+
+
+	
+	
+	public FieldValueErrorStatusQualifierType(String type) {
+		super(type);
+	}
+	
+	public static StatusQualifierType getByType(String type) {
+		if (ILLEGAL_MESSAGE_CLASS_VALUE.equals(type))
+			return ILLEGAL_MESSAGE_CLASS;
+		
+		if (ILLEGAL_MESSAGE_SUB_CLASS_VALUE.equals(type))
+			return ILLEGAL_MESSAGE_SUB_CLASS;
+		
+		if (ILLEGAL_LOAD_KEY_MESSAGE_IDENTIFIER_VALUE.equals(type))
+			return ILLEGAL_LOAD_KEY_MESSAGE_IDENTIFIER;
+		
+		if (ILLEGAL_TERMINAL_COMMAND_CODE_VALUE.equals(type))
+			return ILLEGAL_TERMINAL_COMMAND_CODE;
+		
+		if (ILLEGAL_TERMINAL_COMMAND_MODIFIER_VALUE.equals(type))
+			return ILLEGAL_TERMINAL_COMMAND_MODIFIER;	
+		
+		if (ILLEGAL_FUNCTION_ID_IN_TRANSACTION_REPLY_COMMAND_VALUE.equals(type))
+			return ILLEGAL_FUNCTION_ID_IN_TRANSACTION_REPLY_COMMAND;
+		
+		if (DATA_FIELD_CONTAINS_A_NON_NUMERIC_DIGIT_VALUE.equals(type))
+			return DATA_FIELD_CONTAINS_A_NON_NUMERIC_DIGIT;
+		
+		if (NUMERIC_VALUE_OUT_OF_RANGE_VALUE.equals(type))
+			return NUMERIC_VALUE_OUT_OF_RANGE;
+		
+		if (INVALID_MESSAGE_CO_ORDINATION_NUMBER_VALUE.equals(type))
+			return INVALID_MESSAGE_CO_ORDINATION_NUMBER;
+		
+		if (ILLEGAL_FIT_NUMBER_VALUE.equals(type))
+			return ILLEGAL_FIT_NUMBER;
+		
+		if (TOO_MANY_NOTES_IN_TRANSACTION_REPLY_COMMAND_VALUE.equals(type))
+			return TOO_MANY_NOTES_IN_TRANSACTION_REPLY_COMMAND;
+		
+		if (UNRECOGNIZED_DOCUMENT_DESTINATION_VALUE.equals(type))
+			return UNRECOGNIZED_DOCUMENT_DESTINATION;
+		
+		if (TOO_MANY_COINS_IN_TRANSACTION_REPLY_COMMAND_VALUE.equals(type))
+			return TOO_MANY_COINS_IN_TRANSACTION_REPLY_COMMAND;
+		
+		if (UNRECOGNIZED_BUFFER_IDENTIFIER_VALUE.equals(type))
+			return UNRECOGNIZED_BUFFER_IDENTIFIER;
+		
+		if (BUFFER_IDETIFIER_E_MISSING_VALUE.equals(type))
+			return BUFFER_IDETIFIER_E_MISSING;
+		
+		if (DOCUMENT_NAME_ERROR_VALUE.equals(type))
+			return DOCUMENT_NAME_ERROR;
+		
+		if (THE_SCREEN_IDENTIFIER_IN_AN_OVERRIDE_RESERVED_SCREEN_VALUE.equals(type))
+			return THE_SCREEN_IDENTIFIER_IN_AN_OVERRIDE_RESERVED_SCREEN;
+		
+		if (INCORRECT_KEY_SIZE_SENT_IN_AN_ENCRYPTION_KEY_CHANGE_MESSAGE_VALUE.equals(type))
+			return INCORRECT_KEY_SIZE_SENT_IN_AN_ENCRYPTION_KEY_CHANGE_MESSAGE;
+		
+		if (THE_VERIFICATION_OF_AN_RSA_SIGNATURE_FAILED_VALUE.equals(type))
+			return THE_VERIFICATION_OF_AN_RSA_SIGNATURE_FAILED;
+		
+		if (THE_PKCS_PACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE.equals(type))
+			return THE_PKCS_PACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED;
+		
+		if (THE_PKCS_UNPACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE.equals(type))
+			return THE_PKCS_UNPACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED;
+		
+		if (THE_PKCS_PAD_BLOCK_TYPE_IN_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE.equals(type))
+			return THE_PKCS_PAD_BLOCK_TYPE_IN_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED;
+		
+		if (THE_DECRYPTION_OF_THE_FIXED_HEADER_FAILED_VALUE.equals(type))
+			return THE_DECRYPTION_OF_THE_FIXED_HEADER_FAILED;
+		
+		if (THE_NULL_BYTE_FOLLOWING_PADDING_IS_MISSING_VALUE.equals(type))
+			return THE_NULL_BYTE_FOLLOWING_PADDING_IS_MISSING;
+		
+		if (THE_PAD_BYTE_COUNT_IS_INVALID_VALUE.equals(type))
+			return THE_PAD_BYTE_COUNT_IS_INVALID;
+
+		return UNKNOWN;
+	}
+	
+	@Override
+	public String getDescription() {
+		if (ILLEGAL_MESSAGE_CLASS_VALUE.equals(getType()))
+			return "ILLEGAL_MESSAGE_CLASS";
+		
+		if (ILLEGAL_MESSAGE_SUB_CLASS_VALUE.equals(getType()))
+			return "ILLEGAL_MESSAGE_SUB_CLASS";
+		
+		if (ILLEGAL_LOAD_KEY_MESSAGE_IDENTIFIER_VALUE.equals(getType()))
+			return "ILLEGAL_LOAD_KEY_MESSAGE_IDENTIFIER";
+		
+		if (ILLEGAL_TERMINAL_COMMAND_CODE_VALUE.equals(getType()))
+			return "ILLEGAL_TERMINAL_COMMAND_CODE";
+		
+		if (ILLEGAL_TERMINAL_COMMAND_MODIFIER_VALUE.equals(getType()))
+			return "ILLEGAL_TERMINAL_COMMAND_MODIFIER";	
+		
+		if (ILLEGAL_FUNCTION_ID_IN_TRANSACTION_REPLY_COMMAND_VALUE.equals(getType()))
+			return "ILLEGAL_FUNCTION_ID_IN_TRANSACTION_REPLY_COMMAND";
+		
+		if (DATA_FIELD_CONTAINS_A_NON_NUMERIC_DIGIT_VALUE.equals(getType()))
+			return "DATA_FIELD_CONTAINS_A_NON_NUMERIC_DIGIT";
+		
+		if (NUMERIC_VALUE_OUT_OF_RANGE_VALUE.equals(getType()))
+			return "NUMERIC_VALUE_OUT_OF_RANGE";
+		
+		if (INVALID_MESSAGE_CO_ORDINATION_NUMBER_VALUE.equals(getType()))
+			return "INVALID_MESSAGE_CO_ORDINATION_NUMBER";
+		
+		if (ILLEGAL_FIT_NUMBER_VALUE.equals(getType()))
+			return "ILLEGAL_FIT_NUMBER";
+		
+		if (TOO_MANY_NOTES_IN_TRANSACTION_REPLY_COMMAND_VALUE.equals(getType()))
+			return "TOO_MANY_NOTES_IN_TRANSACTION_REPLY_COMMAND";
+		
+		if (UNRECOGNIZED_DOCUMENT_DESTINATION_VALUE.equals(getType()))
+			return "UNRECOGNIZED_DOCUMENT_DESTINATION";
+		
+		if (TOO_MANY_COINS_IN_TRANSACTION_REPLY_COMMAND_VALUE.equals(getType()))
+			return "TOO_MANY_COINS_IN_TRANSACTION_REPLY_COMMAND";
+		
+		if (UNRECOGNIZED_BUFFER_IDENTIFIER_VALUE.equals(getType()))
+			return "UNRECOGNIZED_BUFFER_IDENTIFIER";
+		
+		if (BUFFER_IDETIFIER_E_MISSING_VALUE.equals(getType()))
+			return "BUFFER_IDETIFIER_E_MISSING";
+		
+		if (DOCUMENT_NAME_ERROR_VALUE.equals(getType()))
+			return "DOCUMENT_NAME_ERROR";
+		
+		if (THE_SCREEN_IDENTIFIER_IN_AN_OVERRIDE_RESERVED_SCREEN_VALUE.equals(getType()))
+			return "THE_SCREEN_IDENTIFIER_IN_AN_OVERRIDE_RESERVED_SCREEN";
+		
+		if (INCORRECT_KEY_SIZE_SENT_IN_AN_ENCRYPTION_KEY_CHANGE_MESSAGE_VALUE.equals(getType()))
+			return "INCORRECT_KEY_SIZE_SENT_IN_AN_ENCRYPTION_KEY_CHANGE_MESSAGE";
+		
+		if (THE_VERIFICATION_OF_AN_RSA_SIGNATURE_FAILED_VALUE.equals(getType()))
+			return "THE_VERIFICATION_OF_AN_RSA_SIGNATURE_FAILED";
+		
+		if (THE_PKCS_PACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE.equals(getType()))
+			return "THE_PKCS_PACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED";
+		
+		if (THE_PKCS_UNPACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE.equals(getType()))
+			return "THE_PKCS_UNPACKING_OF_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED";
+		
+		if (THE_PKCS_PAD_BLOCK_TYPE_IN_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED_VALUE.equals(getType()))
+			return "THE_PKCS_PAD_BLOCK_TYPE_IN_A_SIGNATURE_OR_ENCRYPTION_KEY_FAILED";
+		
+		if (THE_DECRYPTION_OF_THE_FIXED_HEADER_FAILED_VALUE.equals(getType()))
+			return "THE_DECRYPTION_OF_THE_FIXED_HEADER_FAILED";
+		
+		if (THE_NULL_BYTE_FOLLOWING_PADDING_IS_MISSING_VALUE.equals(getType()))
+			return "THE_NULL_BYTE_FOLLOWING_PADDING_IS_MISSING";
+		
+		if (THE_PAD_BYTE_COUNT_IS_INVALID_VALUE.equals(getType()))
+			return "THE_PAD_BYTE_COUNT_IS_INVALID";
+		
+		return super.getDescription();	
+	}
+}

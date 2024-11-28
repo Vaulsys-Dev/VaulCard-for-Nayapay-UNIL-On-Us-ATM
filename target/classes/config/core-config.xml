@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <field name="CoreUrl">
+        <value>https://100.0.1.175/FCBCMS/httpUsecaseRunner</value>
+    </field>
+    <field name="CoreUserName">
+        <value>99990004</value>
+    </field>
+
+    <field name="CorePassword">
+        <value></value>
+	</field>
+
+ 	<field name="CoreFPass">
+        <value>@pass@</value>
+    </field>
+    
+    <field name="SwitchBranchId">
+        <value>995</value>
+    </field>
+
+	<field name="ShetabEODDocumentTitle">
+        <value>تسویه حساب شتاب مورخ </value>
+    </field>
+
+    <field name="FanapEODDocumentTitle">
+        <value>تسویه حساب فناپ مورخ </value>
+    </field>
+    
+    <field name="NeginEODDocumentTitle">
+        <value>تسویه حساب خالص بدهکاری-بستانکاری نگین مورخ </value>
+    </field>
+    
+    <field name="ShetabDebitDocument">
+        <value>خالص بدهکاری شتاب</value>
+    </field>
+    
+    <field name="ShetabCreditDocument">
+        <value>خالص بستانکاری شتاب</value>
+    </field>
+    
+    <field name="ShetabReportEODDocumentTitle">
+        <value>تسوبه شتاب براساس گزارشات بانک مرکزی مورخ </value>
+    </field>
+    
+    <field name="ShetabFeeReportEODDocumentTitle">
+        <value>تسوبه کارمزدهای شتاب براساس گزارشات بانک مرکزی مورخ </value>
+    </field>
+
+    <field name="NeginDebitDocument">
+        <value>خالص بدهکاری نگین</value>
+    </field>
+    
+    <field name="NeginCreditDocument">
+        <value>خالص بستانکاری نگین</value>
+    </field>
+    
+     <field name="ToFanapDocumentTitle">
+        <value>تسویه حساب فناپ برای تراکنش های حالت پذیرندگی </value>
+    </field>
+
+    <field name="NeginTransactions">
+        <value>تراکنش های نگین</value>
+    </field>
+
+    <field name="ShetabTransactions">
+        <value>تراکنش های شتاب</value>
+    </field>
+
+    <field name="FanapMerchantDocumentTitle">
+        <value>تسویه حساب پذیرندگان فناپ مورخ</value>
+    </field>
+    
+    <field name="NeginMerchantDocumentTitle">
+        <value>تسویه حساب پذیرندگان نگین مورخ</value>
+    </field>
+    
+    <field name="NeginMerchantDocumentItemTitle1">
+        <value>تسویه حساب واسط core نگین مورخ </value>
+    </field>
+    
+    <field name="NeginMerchantDocumentItemTitle2">
+        <value>تسویه حساب واسط core نگین مورخ </value>
+    </field>    
+
+    <field name="CBIAccount">
+    	<value>1-995-3567-IRR-1</value>
+    </field>
+    
+    <field name="CBIPaidFeeAccount">
+    	<value>1F1317</value>
+    </field>
+    
+    <field name="CBIReceivedFeeAccount">
+    	<value>2F2327</value>
+    </field>
+<!-- 
+    <field name="CBIDisagreementAccount">
+    	<value>1-995-44441-IRR-1</value>
+    </field>
+ -->    
+
+
+    <field name="CBIDisagreementAccount">
+    	<value>1-995-2F22726-IRR-1</value>
+    </field>
+    
+     <field name="SwitchAccountForFanap">
+    	<value>1F109631</value>
+    </field>
+    <field name="FanapTopicCodes">
+    	<value>1F109631-1F1096311-1F1096312-1F1096313-1F1096314-1F1096315-2F206531-2F2065311-2F2065312-2F2065313-2F2065314-2F2065315</value>
+    </field>
+    <field name="SwitchAccountForShetab">
+    	<value>1F109611</value>
+    </field>
+    <field name="ShetabTopicCodes">
+    	<value>1F109611-1F1096111-1F1096112-1F1096113-1F1096114-1F1096115-2F206511-2F2065111-2F2065112-2F2065113-2F2065114-2F2065115</value>
+    </field>
+    <field name="SwitchAccountForNegin">
+    	<value>1F109621</value>
+    </field>
+    <field name="NeginTopicCodes">
+    	<value>1F109621-2F206521</value>
+    </field>
+    <field name="SwitchSpecialAccounts">
+    	<value>1F109611-1F109621-1F109631-2F206511-2F206521-2F206531-1F1096316-2F2065316</value>
+    </field>
+    
+        <field name="ShetabFeeTopicCodes">
+    	<value>2F2128</value>
+    </field>
+    <field name="ShetabFeeMinAmount">
+    	<value>50000</value>
+    </field>
+    
+        <field name="OnUsATMReturnedDocumentAccount">
+    	<value>1-995-1F109631-IRR-1</value>
+    </field>
+    
+    <field name="shetabExtraAccount">
+    	<value>35672</value>
+    </field>
+    
+        <field name="ShaparakSettlementMainTopic">
+    	<value>1F1096316</value>
+    </field>
+    <field name="ShaparakSettlementTopicCodes">
+    	<value>1F1096316-1F1096319-1F1096320-1F1096321-1F1096322-1F1096323-1F1096324-1F1096325-1F1096326-1F1096327-2F2065316-2F2065319-2F2065320-2F2065321-2F2065322-2F2065323-2F2065324-2F2065325-2F2065326-2F2065327</value>
+    </field>
+    
+    
+</Configuration>

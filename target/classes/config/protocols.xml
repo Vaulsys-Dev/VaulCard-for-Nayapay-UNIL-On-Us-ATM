@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<protocols>
+	
+		<protocol name="ISO8583v93A" class="vaulsys.protocols.iso8583v93.ISO8583v93Protocol">
+			<definition file="/config/protocol/iso93/iso93a.xml" />
+		</protocol>
+
+		<protocol name="NDCProcach1500xe" class="vaulsys.protocols.ndc.NDCProtocol">
+			<definition file="/config/protocol/ndc/ndc.xml" />
+		</protocol>
+
+		<protocol name="CMSHttp" class="vaulsys.protocols.cms.CMSProtocol">
+			<definition file="/config/protocol/cms/cms.xml" />
+		</protocol>
+		
+		<protocol name="UI"
+			class="vaulsys.protocols.ui.UiProtocol">
+			<definition file="config/protocol/ui/ui.xml" />
+		</protocol>
+
+		<protocol name="ISO87A" class="vaulsys.protocols.iso8583v93.ISO8583v87Protocol">
+			<definition file="/config/protocol/iso87/iso87a.xml" />
+		</protocol>
+	
+		<protocol name="Negin87A" class="vaulsys.protocols.negin87.Negin87Protocol">
+			<definition file="/config/protocol/iso87/negin87a.xml" />
+		</protocol>
+		
+		<protocol name="FnsPep" class="vaulsys.protocols.fnsPep.FnsPepProtocol">
+			<definition file="/config/protocol/iso87/fnsPep.xml"/>
+		</protocol>
+		
+		<protocol name="Shetab87A" class="vaulsys.protocols.shetab87.Shetab87Protocol">
+			<definition file="/config/protocol/iso87/shetab87a.xml" />
+		</protocol>
+		
+		<protocol name="ISO8583v87A" class="vaulsys.protocols.iso8583v87.ISO8583v87Protocol">
+			<definition file="/config/protocol/iso87/iso87a.xml" />
+		</protocol>
+		
+		<protocol name="Pos87A" class="vaulsys.protocols.pos87.Pos87Protocol">
+			<definition file="/config/protocol/iso87/pos87a.xml" />
+		</protocol>
+		
+		<protocol name="Infotech87" class="vaulsys.protocols.infotech.InfotechProtocol">
+				<definition file="/config/protocol/iso87/infotecha.xml" />
+		</protocol>
+
+		<protocol name="ISO8583v93B" class="vaulsys.protocols.iso8583v93.ISO8583v93Protocol">
+			<definition file="/config/protocol/iso93/iso93b.xml" />
+		</protocol>
+		
+		<protocol name="Jware93B" class="vaulsys.protocols.jware93.Jware93Protocol">
+			<definition	file="/config/protocol/jware93/jware93b.xml" />
+		</protocol>
+
+		<protocol name="UnionPay" class="vaulsys.protocols.PaymentSchemes.UnionPay.UnionPayProtocol">
+			<definition file="/config/protocol/PaymentSchemes/UnionPay.xml" />
+		</protocol>
+		
+		<protocol name="IntSwitch87A" class="vaulsys.protocols.IntermediateSwitch.IntSwitch87Protocol"> <!--Raza Adding for Intermediate Switch-->
+			<definition file="/config/protocol/iso87/IntSwitch87a.xml" />
+		</protocol>
+
+		<protocol name="MasterCard87A" class="vaulsys.protocols.PaymentSchemes.MasterCard.MasterCard87Protocol"> <!--Raza Adding for Intermediate Switch-->
+			<definition file="/config/protocol/PaymentSchemes/MasterCard87a.xml" />
+		</protocol>
+
+		<protocol name="Onelink" class="vaulsys.protocols.PaymentSchemes.Onelink.OnelinkProtocol">
+			<definition file="/config/protocol/PaymentSchemes/Onelink.xml" />
+		</protocol>
+
+		<!-- Added By : Asim Shahzad, Date : 24th Nov 2016, Desc : Adding protocol for Visa SMS  -->
+		<protocol name="VisaSMS" class="vaulsys.protocols.PaymentSchemes.VisaSMS.VisaSMSProtocol">
+			<definition file="/config/protocol/PaymentSchemes/VisaSMS.xml" />
+		</protocol>
+		<!-- Protocol addition for Visa SMS, end  -->
+	        <protocol name="ISOHost" class="vaulsys.protocols.PaymentSchemes.ISOHost.ISOHostProtocol">
+			<definition file="/config/protocol/PaymentSchemes/ISOHost.xml" />
+		</protocol>
+
+		<protocol name="VisaBaseI" class="vaulsys.protocols.PaymentSchemes.VisaBaseI.VisaBaseIProtocol">
+			<definition file="/config/protocol/PaymentSchemes/VisaBaseI.xml" />
+		</protocol>
+		
+		<protocol name="NetworkUI"
+				  class="vaulsys.protocols.PaymentSchemes.NetworkUi.NetworkUiProtocol">
+			<definition file="config/protocol/PaymentSchemes/ui.xml" />
+		</protocol>
+
+		<protocol name="JCB" class="vaulsys.protocols.PaymentSchemes.JCB.JCBProtocol">
+			<definition file="/config/protocol/PaymentSchemes/JCB.xml" />
+		</protocol>
+		
+		<protocol name="EasyPaisa" class="vaulsys.protocols.PaymentSchemes.EasyPaisa.EasyPaisaProtocol">
+			<definition file="/config/protocol/PaymentSchemes/EasyPaisa.xml" />
+		</protocol>
+
+		<protocol name="MobileBanking" class="vaulsys.protocols.PaymentSchemes.MobileBanking.MobileBankingProtocol">
+			<definition file="/config/protocol/PaymentSchemes/MobileBanking.xml" />
+		</protocol>
+
+		<protocol name="NAC" class="vaulsys.protocols.PaymentSchemes.NAC.NACProtocol">
+			<definition file="/config/protocol/PaymentSchemes/NAC.xml" />
+		</protocol>
+
+	</protocols>
+</configuration>

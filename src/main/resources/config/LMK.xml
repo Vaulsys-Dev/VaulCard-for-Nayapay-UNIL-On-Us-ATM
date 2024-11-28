@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<LMKS>
+		<LMK name='ZMK'>
+			<value>222222222222222222222222222222222222222222222222</value>
+			<length>24</length>
+		</LMK>
+		<LMK name='ZPK'>
+			<value>222222222222222222222222222222222222222222222222</value>
+			<length>24</length>
+		</LMK>
+		<LMK name='TMK'>
+			<value>222222222222222222222222222222222222222222222222</value>
+			<length>24</length>
+		</LMK>
+		<LMK name='TPK'>
+			<value>222222222222222222222222222222222222222222222222</value>
+			<length>24</length>
+		</LMK>
+		<LMK name='TAK'>
+			<value>222222222222222222222222222222222222222222222222</value>
+			<length>24</length>
+		</LMK>
+		<LMK name='PVK'>
+			<value>222222222222222222222222222222222222222222222222</value>
+			<length>24</length>
+		</LMK>
+		<LMK name='CVK'>
+			<value>222222222222222222222222222222222222222222222222</value>
+			<length>24</length>
+		</LMK>
+		<LMK name='BDK'>
+			<value>222222222222222222222222222222222222222222222222</value>
+			<length>24</length>
+		</LMK>
+	</LMKS>
+</configuration>

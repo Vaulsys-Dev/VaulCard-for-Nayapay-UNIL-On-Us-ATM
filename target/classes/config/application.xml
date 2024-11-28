@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<classes>
+		<class name="vaulsys.wfe.process.SwitchThreadPool">
+			<description></description>
+			<field name="CoreSize">
+				<description></description>
+				<value>100</value>
+			</field> 
+			<field name="MaxSize">
+				<value>200</value>
+			</field> 
+			<field name="MaxQueueSize">
+				<value>100</value>
+			</field> 
+			<field name="KeepAliveTime">
+				<description></description>
+				<value>10000</value>
+			</field> 
+			<field name="CoreSizeScheduled">
+				<description></description>
+				<value>1</value>
+			</field> 
+			<field name="MaxSizeScheduled">
+				<value>1</value>
+			</field> 
+			<field name="MaxQueueSizeScheduled">
+				<value>2000</value>
+			</field>
+			<field name="KeepAliveTimeScheduled">
+				<description></description>
+				<value>10000</value>
+			</field> 
+		</class>
+	</classes>
+</configuration>

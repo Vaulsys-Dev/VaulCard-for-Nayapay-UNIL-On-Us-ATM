@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+			
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<!--		<property name="hibernate.connection.url">
+		jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL =
+			TCP)(HOST = 100.0.1.159)(PORT = 1521))(LOAD_BALANCE = YES))(CONNECT_DATA =(SERVER = DEDICATED) (SERVICE_NAME = CMS)))
+		</property>
+-->
+		<property name="hibernate.connection.url">
+		jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 100.0.1.153)(PORT = 1521))(LOAD_BALANCE = YES))(CONNECT_DATA =(SERVER = DEDICATED) (SID = CMSDB)))
+                </property>
+
+		<property name="hibernate.connection.username">fnpswitch</property>
+		<property name="hibernate.connection.password">SaLaM</property>
+
+		<property name="hibernate.default_schema">cms</property>
+		
+		
+		<property name="hbm2ddl.auto">none</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="cache.use_query_cache">false</property>
+		<property name="cache.use_second_level_cache">false</property>
+		<property name="jdbc.batch_size">50</property>
+		<property name="jdbc.fetch_size">10</property>
+
+		<!-- 	<property name="jdbc.use_scrollable_resultset">true</property>  -->
+		<property name="connection.autocommit">false</property>
+
+
+<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+
+		<property name="c3p0.max_size">10</property>
+		<property name="c3p0.min_size">2</property>
+		<property name="c3p0.timeout">1000</property>
+		<property name="c3p0.minPoolSize">2</property>
+		<property name="c3p0.maxPoolSize">100</property>
+		<property name="c3p0.max_statements">0</property>
+		<property name="c3p0.acquire_increment">2</property>
+		<property name="c3p0.idle_test_period">3000</property>
+
+		<property name="current_session_context_class">thread</property>
+
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+
+		<!-- ===================================================== -->
+
+	</session-factory>
+</hibernate-configuration>

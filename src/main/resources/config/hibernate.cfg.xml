@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<!--<property name="hibernate.hbm2ddl.auto">validate</property>--> <!--Raza Adding for KEENU-->
+		<property name="hibernate.cache.use_query_cache">false</property>
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		
+		<property name="hibernate.jdbc.wrap_result_sets">true</property>
+		<property name="hibernate.jdbc.batch_size">0</property>
+		<property name="hibernate.jdbc.fetch_size">30</property>
+		
+		<property name="hibernate.connection.autocommit">false</property>
+		<property name="hibernate.connection.isolation">2</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		
+		<property name="hibernate.c3p0.max_size">400</property>
+		<property name="hibernate.c3p0.min_size">20</property>
+<!--		<property name="hibernate.c3p0.timeout">0</property> -->
+		<property name="hibernate.c3p0.max_statements">0</property>
+		<property name="hibernate.c3p0.acquire_increment">5</property>
+		<property name="hibernate.c3p0.idle_test_period">1800</property>
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!--<property name="hibernate.connection.characterEncoding">UTF-8</property> &lt;!&ndash;Raza NayaPay&ndash;&gt;-->
+		<!--<property name="hibernate.connection.useUnicode">true</property> &lt;!&ndash;Raza NayaPay&ndash;&gt;-->
+		<!-- ===================================================== -->
+		<mapping package="vaulsys" />
+		<mapping package="vaulsys.entity" />
+		<mapping package="vaulsys.terminal" />
+		<mapping package="vaulsys.network" /> <!--Raza MasterCard-->
+
+
+		<mapping class="vaulsys.transaction.Transaction" />
+		<mapping class="vaulsys.transaction.impl.ManuallyProcessdTransaction" />
+		<mapping class="vaulsys.transaction.LifeCycle" />
+		<mapping class="vaulsys.protocols.ifx.imp.ProcessdTransaction" />
+		<mapping class="vaulsys.protocols.ifx.imp.ClearingIfxReconcilementData" />
+		<mapping class="vaulsys.transaction.ClearingInfo" />
+		<mapping class="vaulsys.transaction.SettlementInfo" />
+
+		<mapping class="vaulsys.protocols.ifx.imp.Ifx" />
+		<mapping class="vaulsys.protocols.ifx.imp.AcctBal" />
+		<mapping class="vaulsys.protocols.ifx.imp.MessageReferenceData" />
+		<mapping class="vaulsys.protocols.ifx.imp.Status" />
+		<mapping class="vaulsys.protocols.ifx.imp.CardAcctId" />
+		<mapping class="vaulsys.protocols.ifx.imp.OrgRec" />
+		<mapping class="vaulsys.protocols.ifx.imp.EMVRqData" />
+		<mapping class="vaulsys.protocols.ifx.imp.EMVRsData" />
+		<mapping class="vaulsys.protocols.ifx.imp.BankStatementData" />
+		<mapping class="vaulsys.protocols.ifx.imp.CardAccountInformation" />
+		<mapping class="vaulsys.protocols.ifx.imp.NetworkTrnInfo" />
+		<mapping class="vaulsys.protocols.ifx.imp.ATMSpecificData" />
+		<mapping class="vaulsys.protocols.ifx.imp.ThirdPartyData" />
+		<mapping class="vaulsys.protocols.ifx.imp.BillPaymentData" />
+		<mapping class="vaulsys.protocols.ifx.imp.EPaymentData" />
+		<mapping class="vaulsys.protocols.ifx.imp.CreditCardData" />
+		<mapping class="vaulsys.protocols.ifx.imp.KeyManagement" />
+		<mapping class="vaulsys.protocols.ifx.imp.POSSpecificData" />
+		<mapping class="vaulsys.protocols.ifx.imp.CellChargingData" />
+		<mapping class="vaulsys.protocols.ifx.imp.LotteryData" />
+		<mapping class="vaulsys.protocols.ifx.imp.ReconciliationData" />
+ 		<mapping class="vaulsys.protocols.ifx.imp.UiSpecificData"/>
+		<mapping class="vaulsys.protocols.ifx.imp.TopupData"/>
+ 		<mapping class="vaulsys.protocols.ifx.imp.OnlineBillPaymentData"/>
+		<mapping class="vaulsys.protocols.ifx.imp.GhasedakData"/>
+
+		<mapping class="vaulsys.clearing.consts.SettlementDataCriteria" />
+		<mapping class="vaulsys.clearing.consts.CriteriaData" />
+
+		<mapping class="vaulsys.clearing.base.SynchronizationObject" />
+		<mapping class="vaulsys.clearing.base.SettlementRecord" />
+
+		<mapping class="vaulsys.message.Message" />
+		<mapping class="vaulsys.message.MessageXML" />
+		<mapping class="vaulsys.message.ScheduleMessage" />
+
+		<mapping class="vaulsys.entity.MerchantCategory" />
+		<mapping class="vaulsys.entity.impl.FinancialEntity" />
+		<mapping class="vaulsys.entity.impl.Branch" />
+		<mapping class="vaulsys.entity.impl.Merchant" />
+		<mapping class="vaulsys.entity.impl.Shop" />
+		<mapping class="vaulsys.entity.impl.Institution" />
+		<mapping class="vaulsys.entity.impl.Organization" />
+		<mapping class="vaulsys.entity.impl.FinancialEntitySharedFeature" />
+		<mapping class="vaulsys.entity.impl.FinancialEntityGroup" />
+		<mapping class="vaulsys.entity.impl.Visitor" />
+
+
+		<mapping class="vaulsys.clearing.base.ClearingDate" />
+		<mapping class="vaulsys.clearing.base.ClearingProfile" />
+		<mapping class="vaulsys.clearing.report.ShetabDocumentRecord"/>
+		<mapping class="vaulsys.clearing.report.ShetabReversalReportRecord" />
+		<mapping class="vaulsys.clearing.cyclecriteria.CycleCriteria"/>
+
+		<mapping class="vaulsys.clearing.base.SettlementData" />
+		<mapping class="vaulsys.clearing.base.SettlementState" />
+		<mapping class="vaulsys.clearing.base.SettlementReport" />
+		<mapping class="vaulsys.clearing.base.SettlementDataReport" />
+		
+		<mapping class="vaulsys.security.base.SecurityProfile" />
+		<mapping class="vaulsys.security.base.SecurityFunction" />
+		<mapping class="vaulsys.security.base.SecurityParameter" />
+		<mapping class="vaulsys.security.base.StoredKey" />
+
+		<mapping class="vaulsys.security.securekey.SecureKey" />
+		<mapping class="vaulsys.security.securekey.SecureDESKey" />
+		<mapping class="vaulsys.security.securekey.HSMStoredSecureDESKey" />
+		<mapping class="vaulsys.security.securekey.RSAPublicKey" />
+
+		<mapping class="vaulsys.customer.Currency" />
+
+		<mapping class="vaulsys.fee.impl.FeeItem" />
+		<mapping class="vaulsys.fee.impl.TransactionFee" />
+		<mapping class="vaulsys.fee.impl.EventBasedFee" />
+		<mapping class="vaulsys.fee.impl.BaseFee" />
+		<mapping class="vaulsys.fee.impl.Fee" />
+		<mapping class="vaulsys.fee.impl.FeeProfile" />
+		<mapping class="vaulsys.fee.impl.AbstractEntityAccount" />
+		<mapping class="vaulsys.fee.impl.FixedEntityAccount" />
+		<mapping class="vaulsys.fee.impl.VirtualEntityAccount" />
+
+		<mapping class="vaulsys.terminal.impl.Terminal" />
+		<mapping class="vaulsys.terminal.impl.ATMTerminal" />
+		<mapping class="vaulsys.terminal.impl.POSTerminal" />
+		<mapping class="vaulsys.terminal.impl.KIOSKCardPresentTerminal" />
+		<mapping class="vaulsys.terminal.impl.EPAYTerminal" />
+		<mapping class="vaulsys.terminal.impl.SwitchTerminal" />
+		<mapping class="vaulsys.terminal.impl.ThirdPartyVirtualTerminal" />
+		<mapping class="vaulsys.terminal.impl.PINPADTerminal"/>
+
+		<mapping class="vaulsys.terminal.impl.POSSpecificFilesVersion" />
+		<mapping class="vaulsys.terminal.impl.POSGroupFilesVersion" />
+		
+		<mapping class="vaulsys.terminal.atm.ATMConfiguration" />
+		<mapping class="vaulsys.terminal.atm.ATMRequest" />
+		<mapping class="vaulsys.terminal.atm.ATMResponse" />
+		<mapping class="vaulsys.terminal.atm.OARResponse" />
+		<mapping class="vaulsys.terminal.atm.FunctionCommandResponse" />
+		<mapping class="vaulsys.terminal.atm.Dispense" />
+		<mapping class="vaulsys.terminal.atm.Receipt" />
+		<mapping class="vaulsys.terminal.atm.currencyatm.ATMTerminalCurrency" />
+
+		<mapping class="vaulsys.terminal.atm.RsCodeResponses" />
+
+		<mapping class="vaulsys.terminal.atm.device.ATMDevice" />
+		<mapping class="vaulsys.terminal.atm.device.Cassette" />
+		<mapping class="vaulsys.terminal.atm.device.CassetteA" />
+		<mapping class="vaulsys.terminal.atm.device.CassetteB" />
+		<mapping class="vaulsys.terminal.atm.device.CassetteC" />
+		<mapping class="vaulsys.terminal.atm.device.CassetteD" />
+		<mapping class="vaulsys.terminal.atm.device.VibrationAndOrHeatSensor" />
+		<mapping class="vaulsys.terminal.atm.device.Door" />
+		<mapping class="vaulsys.terminal.atm.device.SilentSignalSensor" />
+		<mapping class="vaulsys.terminal.atm.device.ElectronicsEnclosureSensor" />
+		<mapping class="vaulsys.terminal.atm.device.DepositBin" />
+		<mapping class="vaulsys.terminal.atm.device.CardBin" />
+		<mapping class="vaulsys.terminal.atm.device.CurrencyRejectBin" />
+		<mapping class="vaulsys.terminal.atm.device.Printer" />
+		<mapping class="vaulsys.terminal.atm.device.ReceiptPrinter" />
+		<mapping class="vaulsys.terminal.atm.device.JournalPrinter" />
+		<mapping class="vaulsys.terminal.atm.device.Retract" />
+		<mapping class="vaulsys.terminal.atm.device.Encryptor" />
+		<mapping class="vaulsys.terminal.atm.device.DeviceLocation" />
+		<mapping class="vaulsys.terminal.atm.ResponseScreen" />
+
+		<mapping class="vaulsys.terminal.atm.customizationdata.ATMCustomizationData" />
+		<mapping class="vaulsys.terminal.atm.customizationdata.FITData" />
+		<mapping class="vaulsys.terminal.atm.customizationdata.StateData" />
+		<mapping class="vaulsys.terminal.atm.customizationdata.ScreenData" />
+		<mapping class="vaulsys.terminal.atm.customizationdata.EnhancedParameterData" />
+		<mapping class="vaulsys.terminal.atm.customizationdata.TimerData" />
+		
+
+		<mapping class="vaulsys.terminal.atm.ATMLog" />
+		<mapping class="vaulsys.log.Log" />
+                <mapping class="vaulsys.scheduler.JobLog" />
+
+		<mapping class="vaulsys.job.AbstractSwitchJob" />
+		<mapping class="vaulsys.scheduler.job.EODJob" />
+		<mapping class="vaulsys.scheduler.job.CycleAccountingJob" />
+		<mapping class="vaulsys.scheduler.job.CycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.BillPaymentCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.PEPCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.MerchantCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.CellChargeCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.ShetabCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.ATMCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.MCIVirtualVosoliJob" />
+		<mapping class="vaulsys.scheduler.job.OnlineCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.RequestBasedCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.SeveralPerDayCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.SeveralPerDayPerTrxSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.PerTransactionCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.PerTransactionBillPaymentCycleSettlementJob" />
+<!--		<mapping class="vaulsys.scheduler.job.PerTransactionThirdPartyCycleSettlementJob" /> -->
+		<mapping class="vaulsys.scheduler.job.PerTransactionOnlineBillCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.OnlinePerTransactionSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.OnlinePerTransactionCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.ThirdPartyCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.ATMCurrencyCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.DeleteCardDataJob" />
+		
+
+
+		<mapping class="vaulsys.scheduler.job.MCIBillPaymentCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.ReversalJob" />
+		<mapping class="vaulsys.scheduler.job.OnlineSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.IssuingFCBDocumentJob" />
+		<mapping class="vaulsys.scheduler.job.ATMDailyCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.ReportJob" />
+
+		<!--
+		<mapping class="vaulsys.scheduler.job.TopupCycleSettlementJob" />
+		<mapping class="vaulsys.scheduler.job.MTNTopupJob" />
+		<mapping class="vaulsys.scheduler.MTNTopupJobInfo" />
+-->
+
+		<mapping class="vaulsys.scheduler.JobInfo" />
+		<mapping class="vaulsys.scheduler.RepeatJobInfo" />
+		<mapping class="vaulsys.scheduler.ReversalJobInfo" />
+		<mapping class="vaulsys.scheduler.ConfirmationJobInfo" />
+		<mapping class="vaulsys.scheduler.SettlementJobInfo" />
+		<mapping class="vaulsys.scheduler.IssuingFCBDocumentJobInfo" />
+		<mapping class="vaulsys.scheduler.MCITopupJobInfo" />
+		<mapping class="vaulsys.scheduler.MCIVirtualVosoliJobInfo" />
+		<mapping class="vaulsys.scheduler.JobLog"/>
+
+		<mapping class="vaulsys.entity.impl.FinancialEntityVersion" />
+		<mapping class="vaulsys.entity.impl.InstitutionVersion" />
+		<mapping class="vaulsys.entity.impl.BranchVersion" />
+		<mapping class="vaulsys.entity.impl.MerchantVersion" />
+		<mapping class="vaulsys.entity.impl.ShopVersion" />
+		<mapping class="vaulsys.entity.impl.OrganizationVersion" />
+
+		<mapping class="vaulsys.terminal.impl.TerminalGroup" />
+		<mapping class="vaulsys.terminal.impl.TerminalSharedFeature" />
+		<mapping class="vaulsys.terminal.impl.POSConfiguration" />
+		
+
+		<mapping class="vaulsys.authorization.impl.AuthorizationProfile" />
+		<mapping class="vaulsys.authorization.policy.Policy" />
+		<mapping class="vaulsys.authorization.policy.Bank" />
+		<mapping class="vaulsys.authorization.policy.TerminalAllowedTranactionType" />
+		<mapping class="vaulsys.authorization.policy.TerminalServicePolicy" />
+		<mapping class="vaulsys.authorization.policy.TrxTypePanPrefixPolicy" />
+		<mapping class="vaulsys.authorization.policy.AllowedTranactionTypeBanks" />
+		<mapping class="vaulsys.authorization.policy.FITControlPolicy" />
+		<mapping class="vaulsys.authorization.policy.CycleConstraintTransactionPolicy" />
+		<mapping class="vaulsys.authorization.policy.CardGroupRestrictionPolicy" />
+		<mapping class="vaulsys.authorization.policy.AllowedCard" />
+		<mapping class="vaulsys.authorization.policy.PanPrefixTransactionPolicy" />
+		<mapping class="vaulsys.authorization.policy.AllowedTranaction"/>
+		<mapping class="vaulsys.authorization.policy.CardMaxAmountPerCyclePolicy"/>
+		
+		
+		<mapping class="vaulsys.authorization.data.PolicyData" />
+		<mapping class="vaulsys.authorization.data.EmptyPolicyData" />
+		<mapping class="vaulsys.authorization.data.TerminalData" />
+		<mapping class="vaulsys.authorization.data.TerminalPolicyData" />
+		<mapping class="vaulsys.authorization.data.CardData" />
+	    <mapping class="vaulsys.authorization.data.CardPolicyData" />
+
+		<mapping class="vaulsys.terminal.impl.TerminalVersion" />
+		<mapping class="vaulsys.terminal.impl.POSTerminalVersion" />
+		<mapping class="vaulsys.terminal.impl.KIOSKCardPresentTerminalVersion" />
+		<mapping class="vaulsys.terminal.impl.PINPADTerminalVersion" />
+		<mapping class="vaulsys.terminal.impl.EPAYTerminalVersion" />
+		<mapping class="vaulsys.terminal.impl.ATMTerminalVersion" />
+
+		<mapping class="vaulsys.contact.City" />
+		<mapping class="vaulsys.contact.State" />
+		<mapping class="vaulsys.contact.Country" />
+
+		<mapping class="vaulsys.user.User" />
+		<mapping class="vaulsys.user.Role" />
+		<mapping class="vaulsys.user.SecurityLog" />
+		<mapping class="vaulsys.user.SecurityLogDetail" />
+
+		<mapping class="vaulsys.mtn.MTNCharge" />
+		<mapping class="vaulsys.mtn.MTNChargeSpecification" />
+		<mapping class="vaulsys.mtn.ChargeAssignmentPolicy" />
+		<mapping class="vaulsys.mtn.ChargePolicyData" />
+		<mapping class="vaulsys.mtn.impl.GeneralChargeAssignmentPolicy" />
+		<mapping class="vaulsys.mtn.impl.EmptyChargePolicyData" />
+		<mapping class="vaulsys.mtn.impl.RandomChargeAssignmentPolicy" />
+		<mapping class="vaulsys.mtn.impl.RandomChargePolicyData" />
+
+		<mapping class="vaulsys.lottery.Lottery" />
+		<mapping class="vaulsys.lottery.LotteryAssignmentPolicy" />
+		<mapping class="vaulsys.lottery.LotteryCriteria" />
+		<mapping class="vaulsys.lottery.impl.GeneralLotteryAssignmentPolicy" />
+
+		<mapping class="vaulsys.msg.BroadcastMessage" />
+
+		<mapping class="vaulsys.migration.MigrationData" />
+
+		<mapping class="vaulsys.protocols.ProtocolConfig" />
+
+		<mapping class="vaulsys.modernpayment.onlinebillpayment.OnlineBillPayment"/>
+
+		<mapping class="vaulsys.discount.BaseDiscount" />
+		<mapping class="vaulsys.discount.DiscountProfile" />
+
+		<mapping class="vaulsys.webservices.ghasedak.GhasedakRsItem"/>
+		<mapping class="vaulsys.routing.extended.MessageRouting"/>
+		<!--<mapping class="vaulsys.network.NetworkInfo" />--> <!-- Raza MasterCard -->
+		<mapping class="vaulsys.loro.Loro" /> <!-- m.rehman: Loro/SAF -->
+		<mapping class="vaulsys.authorization.impl.TxnRule" /> <!-- Raza TXN Rule -->
+		<mapping class="vaulsys.authorization.impl.TxnRuleDef" /> <!-- Raza TXN Rule -->
+		<mapping class="vaulsys.authorization.impl.TxnRuleCond" /> <!-- Raza TXN Rule -->
+		<mapping class="vaulsys.authorization.impl.TxnRuleKey" /> <!-- Raza TXN Rule -->
+		<mapping class="vaulsys.security.hsm.base.HSMChannel"/>
+		<mapping class="vaulsys.network.channel.base.Channel"/> <!--Raza Adding for Channel DB-->
+		<mapping class="vaulsys.network.channel.base.InputChannel"/> <!--Raza Adding for Channel DB-->
+		<mapping class="vaulsys.network.channel.base.OutputChannel"/> <!--Raza Adding for Channel DB-->
+		<!--Raza CMS start-->
+		<mapping class="vaulsys.cms.base.CMSCustomer"/>
+		<mapping class="vaulsys.cms.base.CMSAccount"/>
+		<mapping class="vaulsys.cms.base.CMSCard"/>
+		<mapping class="vaulsys.cms.base.CMSCardRelation"/>
+		<mapping class="vaulsys.cms.base.CMSCardAuthorization"/>
+
+		<!--<mapping class="vaulsys.cms.base.CMSProduct"/>-->
+		<!--Raza CMS end-->
+		<mapping class="vaulsys.entity.impl.IMD"/> <!--m.rehman Adding for IMD config-->
+		<mapping class="vaulsys.cms.base.CMSCardAuthorizationFlags"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSProduct"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSProductDetail"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSTrack2Format"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSProductKeys"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSLimit"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSProductLimit"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSCardLimit"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSRemainingLimit"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSSharedIndividualLimit"/> <!--m.rehman-->
+		<mapping class="vaulsys.cms.base.CMSPANRange"/> <!--Raza NayaPay-->
+		<mapping class="vaulsys.cms.base.CMSProductChannels"/> <!--Raza NayaPay-->
+		<mapping class="vaulsys.cms.base.CMSTransactionCodes"/> <!--Raza NayaPay-->
+		<mapping class="vaulsys.wallet.base.WalletAccount"/> <!--m.rehman-->
+		<mapping class="vaulsys.wallet.base.WalletCardRelation"/> <!--m.rehman-->
+		<mapping class="vaulsys.wallet.base.WalletCard"/> <!--m.rehman-->
+		<mapping class="vaulsys.wallet.base.WalletCardAuthorization"/> <!--m.rehman-->
+		<mapping class="vaulsys.transaction.base.POSBatchTransactionLog"/> <!--m.rehman-->
+		<mapping class="vaulsys.authorization.impl.NetworkAuthorization"/> <!--Raza TXN PERMISSION-->
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.model.NayaPayCustomer"/> <!--Raza NayaPay-->
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.entity.WalletCMSWsEntity"/> <!--Raza NayaPay-->
+		<mapping class="vaulsys.cms.base.CMSAccountLimit"/> <!--Raza NayaPay Wallet-->
+		<mapping class="vaulsys.transaction.window.entity.ActiveTxnWindow"/> <!--Raza NayaPay TXN Window-->
+		<mapping class="vaulsys.transaction.window.entity.TxnWindow"/> <!--Raza NayaPay TXN Window-->
+		<mapping class="vaulsys.cms.base.NayaPayRelation"/> <!--Raza NayaPay TXN Window-->
+		<mapping class="vaulsys.wallet.base.ledgers.CustomerLedger"/> <!--Raza NayaPay LEDGER-->
+		<mapping class="vaulsys.wallet.base.ledgers.GeneralLedger"/> <!--Raza NayaPay LEDGER-->
+		<mapping class="vaulsys.wallet.base.ledgers.RevenueLedger"/> <!--Raza NayaPay LEDGER-->
+		<mapping class="vaulsys.wallet.base.ledgers.SalesTaxLedger"/> <!--Raza NayaPay LEDGER-->
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.model.AccessToken"/> <!--Raza NayaPay ACCESSTOKEN-->
+		<mapping class="vaulsys.wallet.base.ledgers.WalletGeneralLedger"/> <!--Raza NayaPay LEDGER-->
+		<mapping class="vaulsys.cms.base.CMSSecurQuestions"/> <!--Raza SecureQuestions-->
+		<mapping class="vaulsys.cms.base.CMSCustSecurQuestions"/> <!--Raza SecureQuestions-->
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.entity.SecurityParams"/> <!--Raza SecureQuestions-->
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.entity.SwitchTransactionCodes"/> <!--Raza 01072019-->
+		<mapping class="vaulsys.cms.base.CMSAuth"/>
+		<mapping class="vaulsys.cms.base.CMSProductDebitLimit"/>
+		<mapping class="vaulsys.cms.base.CMSProductCreditLimit"/>
+		<mapping class="vaulsys.cms.base.CMSDebitRemainingLimit"/>
+		<mapping class="vaulsys.cms.base.CMSCreditRemainingLimit"/>
+		<mapping class="vaulsys.entity.impl.TransactionCharges"/>
+		<mapping class="vaulsys.entity.Tax"/>
+		<mapping class="vaulsys.cms.base.CMSActivityLog"/>
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.entity.FundBankGl"/>
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.entity.FundBank"/>
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.entity.FundBankAccount"/>
+
+		<mapping class="vaulsys.wallet.base.ledgers.CMSBusinessEntity"/>
+		<mapping class="vaulsys.wallet.base.ledgers.CMSEMIAccountCollection"/>
+		<mapping class="vaulsys.wallet.base.ledgers.EMIWalletBalanceLog"/>
+		<mapping class="vaulsys.wallet.base.ledgers.WalletBalanceLog"/>
+		<mapping class="vaulsys.wallet.base.ledgers.WalletGeneralLedger"/>
+		<mapping class="vaulsys.wallet.base.ledgers.CMSBusinessWallet"/>
+		<mapping class="vaulsys.wallet.base.ledgers.EMICollectionBalanceLog"/>
+		<mapping class="vaulsys.wallet.base.ledgers.CMSEMIWallet"/>
+		<mapping class="vaulsys.wallet.base.ledgers.BusinessWalletBalanceLog"/>
+
+		<!--Asim Shahzad, Date : 27th Aug 2020, Call ID : VC-NAP-202008073/ VC-NAP-202009301-->
+		<mapping class="vaulsys.config.SystemConfig"/>
+		<!--==============================================================-->
+		<!-- //m.rehman: 06-08-2020, PAN generation according to pan format defined for scheme -->
+		<mapping class="vaulsys.cms.base.CMSPANFormat"/>
+		<mapping class="vaulsys.cms.base.CMSPANFormatFields"/>
+
+		<!--Asim Shahzad, Date : 13th Jan 2021, Call ID : VC-NAP-202101071 / VP-NAP-202101071 / VG-NAP-202101071 (Release # 1)-->
+		<mapping class="vaulsys.cms.base.CMSCardControlConfig"/>
+		<!--==============================================================-->
+
+		<!-- m.rehman: Euronet Integration -->
+		<mapping class="vaulsys.entity.FBRATL"/>
+
+		<!--Asim Shahzad, Date : 12th July 2021, Tracking ID : VC-NAP-202107121-->
+		<mapping class="vaulsys.cms.base.CMSCardSequenceTracker"/>
+
+		<!--Asim Shahzad, Date : 4th Aug 2021, Tracking ID : VP-NAP-202103292 / VC-NAP-202103293-->
+		<mapping class="vaulsys.wallet.base.ledgers.ChartOfAccount"/>
+		<mapping class="vaulsys.wallet.base.ledgers.ChartOfAccountLevel"/>
+		<!--====================================================================================-->
+
+		<!--m.rehman: 10-11-2021 - Nayapay Optimization-->
+		<mapping class="vaulsys.webservice.walletcardmgmtwebservice.entity.WalletCMSWsListingEntity"/>
+		<!--====================================================================================-->
+	</session-factory>
+</hibernate-configuration>

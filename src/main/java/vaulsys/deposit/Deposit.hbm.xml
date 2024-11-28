@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="vaulsys.deposit">
+
+
+	<class name="Deposit" table="HESAB">
+
+		<composite-id class="DepositPK" name="depositPK">
+			<key-property name="abrnchcod" column="abrnchcod"
+						  type="java.lang.Integer"/>
+			<key-property name="cfcifno" column="cfcifno"
+						  type="java.lang.Integer"/>
+			<key-property name="tbdptype" column="tbdptype"
+						  type="java.lang.Integer"/>
+			<key-property name="tdserial" column="tdserial"
+						  type="java.lang.Integer"/>
+		</composite-id>
+
+		<property name="tdtitle" column="tdtitle"
+				  type="java.lang.String" not-null="false" unique="false"/>
+
+		<property name="state" column="aistate"
+				  type="java.lang.Integer" not-null="false" unique="false"/>
+
+	</class>
+
+
+</hibernate-mapping>

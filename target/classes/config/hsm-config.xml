@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <IP name="HSMIP" value="192.168.1.39" />
+
+    <BIN name="Passargad" value="502229" />
+    <BIN name="Tourism" value="603789" />
+
+    <CommandType name="Thales" value="1"/>
+    <CommandType name="Safenet" value="2"/>
+
+    <Channel name="HSM-Pass-1">
+        <address>
+            <ip>HSMIP</ip>
+            <port>10000</port>
+        </address>
+        <bin>Passargad</bin>
+        <CommandType>Thales</CommandType>
+        <Timeout-MILLISECONDS>30000</Timeout-MILLISECONDS>
+
+        <IOFilter>vaulsys.network.filters.Mina2PayShield2000IoFilter</IOFilter>
+    </Channel>
+
+
+    <Channel name="HSM_Pass_2">
+        <address>
+            <ip>HSMIP</ip>
+            <port>8888</port>
+        </address>
+        <bin>Passargad</bin>
+        <IOFilter>vaulsys.network.filters.Mina2PayShield2000IoFilter</IOFilter>
+        <CommandType>Thales</CommandType>
+        <Timeout-MILLISECONDS>30000</Timeout-MILLISECONDS>
+    </Channel>
+
+    <Channel name="HSM_pass-3">
+        <address>
+            <ip>HSMIP</ip>
+            <port>7777</port>
+        </address>
+        <bin>Passargad</bin>
+        <IOFilter>vaulsys.network.filters.Mina2PayShield2000IoFilter</IOFilter>
+        <CommandType>Thales</CommandType>
+        <Timeout-MILLISECONDS>30000</Timeout-MILLISECONDS>
+    </Channel>
+
+        <Channel name="HSM_Tourism_4">
+            <address>
+                <ip>HSMIP</ip>
+                <port>6666</port>
+            </address>
+            <bin>Tourism</bin>
+            <IOFilter>vaulsys.network.filters.Mina2PayShield2000IoFilter</IOFilter>
+            <CommandType>Safenet</CommandType>
+            <Timeout-MILLISECONDS>30000</Timeout-MILLISECONDS>
+        </Channel>
+
+        <Channel name="HSM_Tourism_5">
+            <address>
+                <ip>HSMIP</ip>
+                <port>5555</port>
+            </address>
+            <bin>Tourism</bin>
+            <IOFilter>vaulsys.network.filters.Mina2PayShield2000IoFilter</IOFilter>
+            <CommandType>Safenet</CommandType>
+            <Timeout-MILLISECONDS>30000</Timeout-MILLISECONDS>
+        </Channel>    <!---->
+
+</configuration>

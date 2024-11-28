@@ -1,0 +1,220 @@
+<Routing>
+
+        <Routing_Table name="default">
+
+                <!--
+                -->
+                <RoutingTree>
+                        <!-- m.rehman: testing entry for title fetch and IBFT from 1Link <end> -->
+                        <Routing_Entry type="message_type" value="TITLE_FETCH_RQ">
+                                <Routing_Entry type="channel_name" value="all">
+                                        <Routing_Entry type="entity_type" value="all">
+                                                <Routing_Entry type="service" value="all">
+                                                        <Routing_Entry type="card_issure" value="otherwise">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>channelISOHostOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                </Routing_Entry>
+                                        </Routing_Entry>
+                                </Routing_Entry>
+                        </Routing_Entry>
+                        <!-- m.rehman: testing entry for title fetch and IBFT from 1Link <end> -->
+
+                        <!-- m.rehman: testing entry for Loro <start> -->
+                        <Routing_Entry type="message_type" value="LORO_ADVICE_RQ, LORO_REVERSAL_REPEAT_RQ">
+                                <Routing_Entry type="channel_name" value="all">
+                                        <Routing_Entry type="entity_type" value="all">
+                                                <Routing_Entry type="service" value="all">
+                                                        <Routing_Entry type="card_issure" value="otherwise">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>CMSOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                </Routing_Entry>
+                                        </Routing_Entry>
+                                </Routing_Entry>
+                        </Routing_Entry>
+                        <!-- m.rehman: testing entry for Loro <end> -->
+
+                        <!-- m.rehman: Advice Request SAF/Loro messages -->
+                        <Routing_Entry type="message_type" value=".*ADVICE_RQ">
+                                <Routing_Entry type="channel_name" value="all">
+                                        <Routing_Entry type="entity_type" value="all">
+                                                <Routing_Entry type="service" value="all">
+                                                        <Routing_Entry type="card_issure" value="otherwise">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>channelISOHostOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                </Routing_Entry>
+                                        </Routing_Entry>
+                                </Routing_Entry>
+                        </Routing_Entry>
+
+                        <!-- m.rehman: Advice Request SAF/Loro Response messages -->
+                        <Routing_Entry type="message_type" value=".*ADVICE_RS">
+                                <Routing_Entry type="channel_name" value="all">
+                                        <Routing_Entry type="entity_type" value="all">
+                                                <Routing_Entry type="service" value="all">
+                                                        <Routing_Entry type="card_issure" value="otherwise">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>channelISOHostOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                </Routing_Entry>
+                                        </Routing_Entry>
+                                </Routing_Entry>
+                        </Routing_Entry>
+
+                        <Routing_Entry type="message_type" value=".*REV_RQ,.*REV_RQ_REPEAT,.*REV_REPEAT_RQ,.*RQ ">
+                                <Routing_Entry type="channel_name" value="all">
+                                        <Routing_Entry type="entity_type" value="all">
+                                                <Routing_Entry type="service" value="all">
+                                                        <Routing_Entry type="card_issure" value="502229">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>CMSOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                        <!--making Routing Entry for Shetab with known IMDs as wild will be for CUP-->
+                                                        <Routing_Entry type="card_issure" value="111111"> <!--Add all Shetab IMDs-->
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>channelISOHostOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                        <!--making Routing Entry for Shetab with known IMDs as wild will be for CUP-->
+                                                        <!--MasterCard Routing start-->
+                                                        <Routing_Entry type="card_issure" value="520473">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>CMSOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                        <!--MasterCard Routing end-->
+                                                        <!--JCB Routing start-->
+                                                        <Routing_Entry type="card_issure" value="123456">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>CMSOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                        <!--JCB Routing end-->
+                                                        <!--Routing Entry for Intermediate Switch-->
+                                                        <Routing_Entry type="card_issure" value="otherwise">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>channelInterSwitchOut</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                        <!--Routing Entry for Intermediate Switch-->
+                                                </Routing_Entry>
+                                        </Routing_Entry>
+                                </Routing_Entry>
+                        </Routing_Entry>
+
+                        <!-- Response messages -->
+                        <Routing_Entry type="message_type" value=".*RS">
+                                <Routing_Entry type="channel_name" value="all">
+                                        <Routing_Entry type="entity_type" value="all">
+                                                <Routing_Entry type="service" value="all">
+                                                        <Routing_Entry type="card_issure" value="all">
+                                                                <Routing_Entry type="card_acquire" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>originator</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                </Routing_Entry>
+                                        </Routing_Entry>
+                                </Routing_Entry>
+                        </Routing_Entry>
+
+                        <Routing_Entry type="message_type" value="otherwise">
+                                <Routing_Entry type="channel_name" value="all">
+                                        <Routing_Entry type="ENTITY_TYPE" value="all">
+                                                <Routing_Entry type="SERVICE" value="all">
+                                                        <Routing_Entry type="CARD_ISSURE" value="all">
+                                                                <Routing_Entry type="CARD_ACQUIRE" value="all">
+                                                                        <Routing_Entry type="CARD_RECIEVER" value="all">
+                                                                                <Destinations>
+                                                                                        <Destination>
+                                                                                                <name>originator</name>
+                                                                                        </Destination>
+                                                                                </Destinations>
+                                                                        </Routing_Entry>
+                                                                </Routing_Entry>
+                                                        </Routing_Entry>
+                                                </Routing_Entry>
+                                        </Routing_Entry>
+                                </Routing_Entry>
+                        </Routing_Entry>
+                </RoutingTree>
+
+                <RoutingParameters>
+                        <Parameter name="MESSAGE_TYPE" Path="Ifx.IfxType" Order="1" />
+                        <Parameter name="CHANNEL_NAME" Path="IncomingMessage.channel.name" Order="2" />
+                        <Parameter name="ENTITY_TYPE" Path="Ifx.NetworkTrnInfo.TerminalType" Order="3" />
+                        <Parameter name="SERVICE" Path="Ifx.TrnType" Order="4" />
+                        <Parameter name="CARD_ISSURE" Path="Ifx.NetworkTrnInfo.DestBankId" Order="5" />
+                        <Parameter name="CARD_ACQUIRE" Path="Ifx.NetworkTrnInfo.BankId" Order="6" />
+                        <Parameter name="CARD_RECIEVER" Path="Ifx.NetworkTrnInfo.RecvBankId" Order="7" />
+                </RoutingParameters>
+        </Routing_Table>
+
+</Routing>
+                                                                         

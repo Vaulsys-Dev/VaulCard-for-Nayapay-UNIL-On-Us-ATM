@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="vaulsys.deposit">
+	<class name="Card" table="KCCARDS">
+		<id name="cfcifno" column="CFCIFNO" type="java.lang.Integer"/>
+		<property name="ciin" column="CIIN" type="java.lang.Integer" insert="false" update="false"/>
+		<property name="crno" column="CRNO" type="java.lang.Integer" insert="false" update="false"/>
+		<property name="cdsqno" column="CDSQNO" type="java.lang.Integer" insert="false" update="false"/>
+	</class>
+</hibernate-mapping>

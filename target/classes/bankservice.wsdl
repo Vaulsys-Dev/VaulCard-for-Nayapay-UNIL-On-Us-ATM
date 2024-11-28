@@ -1,0 +1,514 @@
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nayapaybankservice/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://nayapaybankservice/" name="WebServiceService">
+<types>
+<xsd:schema>
+<xsd:import namespace="http://nayapaybankservice/" schemaLocation="http://localhost:9000/BankService?xsd=1"/>
+</xsd:schema>
+</types>
+<message name="createwalletlevelzero">
+<part name="parameters" element="tns:createwalletlevelzero"/>
+</message>
+<message name="createwalletlevelzeroResponse">
+<part name="parameters" element="tns:createwalletlevelzeroResponse"/>
+</message>
+<message name="Exception">
+<part name="fault" element="tns:Exception"/>
+</message>
+<message name="createwalletlevelone">
+<part name="parameters" element="tns:createwalletlevelone"/>
+</message>
+<message name="createwalletleveloneResponse">
+<part name="parameters" element="tns:createwalletleveloneResponse"/>
+</message>
+<message name="demographicsupdate">
+<part name="parameters" element="tns:demographicsupdate"/>
+</message>
+<message name="demographicsupdateResponse">
+<part name="parameters" element="tns:demographicsupdateResponse"/>
+</message>
+<message name="balanceinquiryotp">
+<part name="parameters" element="tns:balanceinquiryotp"/>
+</message>
+<message name="balanceinquiryotpResponse">
+<part name="parameters" element="tns:balanceinquiryotpResponse"/>
+</message>
+<message name="atmtransactionlog">
+<part name="parameters" element="tns:atmtransactionlog"/>
+</message>
+<message name="atmtransactionlogResponse">
+<part name="parameters" element="tns:atmtransactionlogResponse"/>
+</message>
+<message name="sayhello">
+<part name="parameters" element="tns:sayhello"/>
+</message>
+<message name="sayhelloResponse">
+<part name="parameters" element="tns:sayhelloResponse"/>
+</message>
+<message name="changepin">
+<part name="parameters" element="tns:changepin"/>
+</message>
+<message name="changepinResponse">
+<part name="parameters" element="tns:changepinResponse"/>
+</message>
+<message name="accountlinkotp">
+<part name="parameters" element="tns:accountlinkotp"/>
+</message>
+<message name="accountlinkotpResponse">
+<part name="parameters" element="tns:accountlinkotpResponse"/>
+</message>
+<message name="peertopeer">
+<part name="parameters" element="tns:peertopeer"/>
+</message>
+<message name="peertopeerResponse">
+<part name="parameters" element="tns:peertopeerResponse"/>
+</message>
+<message name="loadwallet">
+<part name="parameters" element="tns:loadwallet"/>
+</message>
+<message name="loadwalletResponse">
+<part name="parameters" element="tns:loadwalletResponse"/>
+</message>
+<message name="balanceinquiry">
+<part name="parameters" element="tns:balanceinquiry"/>
+</message>
+<message name="balanceinquiryResponse">
+<part name="parameters" element="tns:balanceinquiryResponse"/>
+</message>
+<message name="ping">
+<part name="parameters" element="tns:ping"/>
+</message>
+<message name="pingResponse">
+<part name="parameters" element="tns:pingResponse"/>
+</message>
+<message name="ministatementotp">
+<part name="parameters" element="tns:ministatementotp"/>
+</message>
+<message name="ministatementotpResponse">
+<part name="parameters" element="tns:ministatementotpResponse"/>
+</message>
+<message name="loadenvelope">
+<part name="parameters" element="tns:loadenvelope"/>
+</message>
+<message name="loadenvelopeResponse">
+<part name="parameters" element="tns:loadenvelopeResponse"/>
+</message>
+<message name="confirmotp">
+<part name="parameters" element="tns:confirmotp"/>
+</message>
+<message name="confirmotpResponse">
+<part name="parameters" element="tns:confirmotpResponse"/>
+</message>
+<message name="payment">
+<part name="parameters" element="tns:payment"/>
+</message>
+<message name="paymentResponse">
+<part name="parameters" element="tns:paymentResponse"/>
+</message>
+<message name="loadmerchant">
+<part name="parameters" element="tns:loadmerchant"/>
+</message>
+<message name="loadmerchantResponse">
+<part name="parameters" element="tns:loadmerchantResponse"/>
+</message>
+<message name="unloadenvelope">
+<part name="parameters" element="tns:unloadenvelope"/>
+</message>
+<message name="unloadenvelopeResponse">
+<part name="parameters" element="tns:unloadenvelopeResponse"/>
+</message>
+<message name="ministatement">
+<part name="parameters" element="tns:ministatement"/>
+</message>
+<message name="ministatementResponse">
+<part name="parameters" element="tns:ministatementResponse"/>
+</message>
+<message name="unloadwallet">
+<part name="parameters" element="tns:unloadwallet"/>
+</message>
+<message name="unloadwalletResponse">
+<part name="parameters" element="tns:unloadwalletResponse"/>
+</message>
+<message name="debitcardrequest">
+<part name="parameters" element="tns:debitcardrequest"/>
+</message>
+<message name="debitcardrequestResponse">
+<part name="parameters" element="tns:debitcardrequestResponse"/>
+</message>
+<message name="unloadmerchant">
+<part name="parameters" element="tns:unloadmerchant"/>
+</message>
+<message name="unloadmerchantResponse">
+<part name="parameters" element="tns:unloadmerchantResponse"/>
+</message>
+<portType name="WebService">
+<operation name="createwalletlevelzero">
+<input wsam:Action="http://nayapaybankservice/WebService/createwalletlevelzeroRequest" message="tns:createwalletlevelzero"/>
+<output wsam:Action="http://nayapaybankservice/WebService/createwalletlevelzeroResponse" message="tns:createwalletlevelzeroResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/createwalletlevelzero/Fault/Exception"/>
+</operation>
+<operation name="createwalletlevelone">
+<input wsam:Action="http://nayapaybankservice/WebService/createwalletleveloneRequest" message="tns:createwalletlevelone"/>
+<output wsam:Action="http://nayapaybankservice/WebService/createwalletleveloneResponse" message="tns:createwalletleveloneResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/createwalletlevelone/Fault/Exception"/>
+</operation>
+<operation name="demographicsupdate">
+<input wsam:Action="http://nayapaybankservice/WebService/demographicsupdateRequest" message="tns:demographicsupdate"/>
+<output wsam:Action="http://nayapaybankservice/WebService/demographicsupdateResponse" message="tns:demographicsupdateResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/demographicsupdate/Fault/Exception"/>
+</operation>
+<operation name="balanceinquiryotp">
+<input wsam:Action="http://nayapaybankservice/WebService/balanceinquiryotpRequest" message="tns:balanceinquiryotp"/>
+<output wsam:Action="http://nayapaybankservice/WebService/balanceinquiryotpResponse" message="tns:balanceinquiryotpResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/balanceinquiryotp/Fault/Exception"/>
+</operation>
+<operation name="atmtransactionlog">
+<input wsam:Action="http://nayapaybankservice/WebService/atmtransactionlogRequest" message="tns:atmtransactionlog"/>
+<output wsam:Action="http://nayapaybankservice/WebService/atmtransactionlogResponse" message="tns:atmtransactionlogResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/atmtransactionlog/Fault/Exception"/>
+</operation>
+<operation name="sayhello">
+<input wsam:Action="http://nayapaybankservice/WebService/sayhelloRequest" message="tns:sayhello"/>
+<output wsam:Action="http://nayapaybankservice/WebService/sayhelloResponse" message="tns:sayhelloResponse"/>
+</operation>
+<operation name="changepin">
+<input wsam:Action="http://nayapaybankservice/WebService/changepinRequest" message="tns:changepin"/>
+<output wsam:Action="http://nayapaybankservice/WebService/changepinResponse" message="tns:changepinResponse"/>
+</operation>
+<operation name="accountlinkotp">
+<input wsam:Action="http://nayapaybankservice/WebService/accountlinkotpRequest" message="tns:accountlinkotp"/>
+<output wsam:Action="http://nayapaybankservice/WebService/accountlinkotpResponse" message="tns:accountlinkotpResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/accountlinkotp/Fault/Exception"/>
+</operation>
+<operation name="peertopeer">
+<input wsam:Action="http://nayapaybankservice/WebService/peertopeerRequest" message="tns:peertopeer"/>
+<output wsam:Action="http://nayapaybankservice/WebService/peertopeerResponse" message="tns:peertopeerResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/peertopeer/Fault/Exception"/>
+</operation>
+<operation name="loadwallet">
+<input wsam:Action="http://nayapaybankservice/WebService/loadwalletRequest" message="tns:loadwallet"/>
+<output wsam:Action="http://nayapaybankservice/WebService/loadwalletResponse" message="tns:loadwalletResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/loadwallet/Fault/Exception"/>
+</operation>
+<operation name="balanceinquiry">
+<input wsam:Action="http://nayapaybankservice/WebService/balanceinquiryRequest" message="tns:balanceinquiry"/>
+<output wsam:Action="http://nayapaybankservice/WebService/balanceinquiryResponse" message="tns:balanceinquiryResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/balanceinquiry/Fault/Exception"/>
+</operation>
+<operation name="ping">
+<input wsam:Action="http://nayapaybankservice/WebService/pingRequest" message="tns:ping"/>
+<output wsam:Action="http://nayapaybankservice/WebService/pingResponse" message="tns:pingResponse"/>
+</operation>
+<operation name="ministatementotp">
+<input wsam:Action="http://nayapaybankservice/WebService/ministatementotpRequest" message="tns:ministatementotp"/>
+<output wsam:Action="http://nayapaybankservice/WebService/ministatementotpResponse" message="tns:ministatementotpResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/ministatementotp/Fault/Exception"/>
+</operation>
+<operation name="loadenvelope">
+<input wsam:Action="http://nayapaybankservice/WebService/loadenvelopeRequest" message="tns:loadenvelope"/>
+<output wsam:Action="http://nayapaybankservice/WebService/loadenvelopeResponse" message="tns:loadenvelopeResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/loadenvelope/Fault/Exception"/>
+</operation>
+<operation name="confirmotp">
+<input wsam:Action="http://nayapaybankservice/WebService/confirmotpRequest" message="tns:confirmotp"/>
+<output wsam:Action="http://nayapaybankservice/WebService/confirmotpResponse" message="tns:confirmotpResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/confirmotp/Fault/Exception"/>
+</operation>
+<operation name="payment">
+<input wsam:Action="http://nayapaybankservice/WebService/paymentRequest" message="tns:payment"/>
+<output wsam:Action="http://nayapaybankservice/WebService/paymentResponse" message="tns:paymentResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/payment/Fault/Exception"/>
+</operation>
+<operation name="loadmerchant">
+<input wsam:Action="http://nayapaybankservice/WebService/loadmerchantRequest" message="tns:loadmerchant"/>
+<output wsam:Action="http://nayapaybankservice/WebService/loadmerchantResponse" message="tns:loadmerchantResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/loadmerchant/Fault/Exception"/>
+</operation>
+<operation name="unloadenvelope">
+<input wsam:Action="http://nayapaybankservice/WebService/unloadenvelopeRequest" message="tns:unloadenvelope"/>
+<output wsam:Action="http://nayapaybankservice/WebService/unloadenvelopeResponse" message="tns:unloadenvelopeResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/unloadenvelope/Fault/Exception"/>
+</operation>
+<operation name="ministatement">
+<input wsam:Action="http://nayapaybankservice/WebService/ministatementRequest" message="tns:ministatement"/>
+<output wsam:Action="http://nayapaybankservice/WebService/ministatementResponse" message="tns:ministatementResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/ministatement/Fault/Exception"/>
+</operation>
+<operation name="unloadwallet">
+<input wsam:Action="http://nayapaybankservice/WebService/unloadwalletRequest" message="tns:unloadwallet"/>
+<output wsam:Action="http://nayapaybankservice/WebService/unloadwalletResponse" message="tns:unloadwalletResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/unloadwallet/Fault/Exception"/>
+</operation>
+<operation name="debitcardrequest">
+<input wsam:Action="http://nayapaybankservice/WebService/debitcardrequestRequest" message="tns:debitcardrequest"/>
+<output wsam:Action="http://nayapaybankservice/WebService/debitcardrequestResponse" message="tns:debitcardrequestResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/debitcardrequest/Fault/Exception"/>
+</operation>
+<operation name="unloadmerchant">
+<input wsam:Action="http://nayapaybankservice/WebService/unloadmerchantRequest" message="tns:unloadmerchant"/>
+<output wsam:Action="http://nayapaybankservice/WebService/unloadmerchantResponse" message="tns:unloadmerchantResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://nayapaybankservice/WebService/unloadmerchant/Fault/Exception"/>
+</operation>
+</portType>
+<binding name="WebServicePortBinding" type="tns:WebService">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="createwalletlevelzero">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="createwalletlevelone">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="demographicsupdate">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="balanceinquiryotp">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="atmtransactionlog">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="sayhello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="changepin">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="accountlinkotp">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="peertopeer">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="loadwallet">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="balanceinquiry">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="ping">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ministatementotp">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="loadenvelope">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="confirmotp">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="payment">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="loadmerchant">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="unloadenvelope">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="ministatement">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="unloadwallet">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="debitcardrequest">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="unloadmerchant">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+</binding>
+<service name="WebServiceService">
+<port name="WebServicePort" binding="tns:WebServicePortBinding">
+<soap:address location="http://localhost:9000/BankService"/>
+</port>
+</service>
+</definitions>
